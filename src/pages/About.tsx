@@ -36,10 +36,10 @@ const About = () => {
       description: "Odborníčka na obchodné poradenstvo a starostlivosť o klientov."
     },
     {
-      name: "MUDr. Petra Horváthová",
-      position: "Estetická lekárka",
+      name: "Miroslava Kajanová",
+      position: "Recepčná asistentka",
       image: teamMember4,
-      description: "Špecializácia na estetickú medicínu a dermatologické ošetrenia."
+      description: "Prvý kontakt s klientmi, starostlivosť o plynulý priebeh rezervácií a administratívu."
     }
   ];
 
