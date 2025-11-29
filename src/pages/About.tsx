@@ -1,5 +1,9 @@
 import { Layout } from "@/components/layout/Layout";
 import { CheckCircle2 } from "lucide-react";
+import aboutImage from "@/assets/about-clinic-interior.jpg";
+import doctor1 from "@/assets/team-doctor-1.jpg";
+import nurse1 from "@/assets/team-nurse-1.jpg";
+import therapist1 from "@/assets/team-therapist-1.jpg";
 
 const About = () => {
   const whyChooseUs = [
@@ -9,6 +13,27 @@ const About = () => {
     "Bezpečnosť a profesionalita na prvom mieste",
     "Spojenie estetiky, medicíny a wellness",
     "Príjemné a diskrétne prostredie"
+  ];
+
+  const teamMembers = [
+    {
+      name: "MUDr. Petra Nováková",
+      position: "Vedúca lekárka - Estetická medicína",
+      image: doctor1,
+      description: "Špecializácia na neinvazívne estetické procedúry a laserové technológie."
+    },
+    {
+      name: "Bc. Martina Kováčová",
+      position: "Estetická špecialistka",
+      image: nurse1,
+      description: "Odborníčka na ošetrenie pleti, mezoterapiu a laserovú epiláciu."
+    },
+    {
+      name: "Lucia Svobodová",
+      position: "Wellness terapeutka",
+      image: therapist1,
+      description: "Certifikovaná terapeutka pre Head Spa a relaxačné wellness rituály."
+    }
   ];
 
   return (
@@ -30,7 +55,17 @@ const About = () => {
       {/* Philosophy */}
       <section className="py-16 bg-background">
         <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto space-y-8 text-lg leading-relaxed text-muted-foreground">
+          <div className="max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+              <div className="relative h-[500px] rounded-lg overflow-hidden shadow-elegant order-2 lg:order-1">
+                <img 
+                  src={aboutImage} 
+                  alt="N1 Pro Aesthetic Clinic interiér"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              
+              <div className="space-y-8 text-lg leading-relaxed text-muted-foreground order-1 lg:order-2">
             <p>
               V <strong className="text-foreground">N1 Pro Aesthetic Clinic</strong> veríme, že skutočná krása vzniká tam, 
               kde sa stretáva odborná medicínska starostlivosť s hlbokým porozumením človeku. Každý z nás nesie príbeh, 
@@ -67,9 +102,11 @@ const About = () => {
               S láskou Vaša N1 Pro Aesthetic Clinic.
             </p>
 
-            <p className="text-center text-xl text-accent italic">
-              Krása s dušou. Starostlivosť srdcom. Výsledky, ktoré sprevádzajú váš život.
-            </p>
+                <p className="text-center text-xl text-accent italic">
+                  Krása s dušou. Starostlivosť srdcom. Výsledky, ktoré sprevádzajú váš život.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -105,16 +142,23 @@ const About = () => {
               Za každým ošetrením stojí skúsený tím profesionálov, ktorí vám venujú plnú pozornosť a starostlivosť.
             </p>
             
-            {/* Placeholder for team members - can be added later */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {[1, 2, 3].map((i) => (
-                <div key={i} className="bg-card p-6 rounded-lg border border-border">
-                  <div className="w-32 h-32 bg-muted rounded-full mx-auto mb-4"></div>
-                  <h3 className="font-display text-xl font-semibold mb-1">Meno</h3>
-                  <p className="text-muted-foreground text-sm mb-2">Pozícia</p>
-                  <p className="text-sm text-muted-foreground">
-                    Krátky popis člena tímu, vzdelanie a špecializácia.
-                  </p>
+              {teamMembers.map((member) => (
+                <div key={member.name} className="bg-card rounded-lg border border-border overflow-hidden group hover:shadow-elegant transition-all duration-300">
+                  <div className="relative h-80 overflow-hidden">
+                    <img 
+                      src={member.image} 
+                      alt={member.name}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                  </div>
+                  <div className="p-6">
+                    <h3 className="font-display text-xl font-semibold mb-1">{member.name}</h3>
+                    <p className="text-accent text-sm mb-3 font-medium">{member.position}</p>
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      {member.description}
+                    </p>
+                  </div>
                 </div>
               ))}
             </div>
