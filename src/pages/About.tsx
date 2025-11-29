@@ -30,10 +30,10 @@ const About = () => {
       description: "Dlhoročná prax v obore estetickej kozmetiky a starostlivosti o pleť."
     },
     {
-      name: "Lucia Svobodová",
-      position: "Wellness terapeutka",
+      name: "Bianka Poštová",
+      position: "Manažér predaja",
       image: teamMember3,
-      description: "Certifikovaná terapeutka pre Head Spa a relaxačné wellness rituály."
+      description: "Odborníčka na obchodné poradenstvo a starostlivosť o klientov."
     },
     {
       name: "MUDr. Petra Horváthová",
