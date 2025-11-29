@@ -5,6 +5,7 @@ import { Sparkles, Droplet, Users, Zap } from "lucide-react";
 import laserImage from "@/assets/laser-hair-removal-device.jpg";
 import wellnessImage from "@/assets/services-wellness.jpg";
 import skincareImage from "@/assets/services-skincare.jpg";
+import infusionBarImage from "@/assets/services-infusion-bar.jpg";
 
 const categories = [
   {
@@ -19,7 +20,7 @@ const categories = [
     title: "Infúzny bar",
     description: "Vitamínové a revitalizačné infúzie pre obnovenie energie a podporu imunity.",
     href: "/sluzby#infuzny-bar",
-    image: skincareImage
+    image: infusionBarImage
   },
   {
     icon: Sparkles,
