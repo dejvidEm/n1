@@ -1,9 +1,10 @@
 import { Layout } from "@/components/layout/Layout";
 import { CheckCircle2 } from "lucide-react";
 import aboutImage from "@/assets/about-clinic-interior.jpg";
-import doctor1 from "@/assets/team-doctor-1.jpg";
-import nurse1 from "@/assets/team-nurse-1.jpg";
-import therapist1 from "@/assets/team-therapist-1.jpg";
+import teamMember1 from "@/assets/team-member-1.jpeg";
+import teamMember2 from "@/assets/team-member-2.jpeg";
+import teamMember3 from "@/assets/team-member-3.jpeg";
+import teamMember4 from "@/assets/team-member-4.jpeg";
 
 const About = () => {
   const whyChooseUs = [
@@ -17,22 +18,28 @@ const About = () => {
 
   const teamMembers = [
     {
-      name: "MUDr. Petra Nováková",
-      position: "Vedúca lekárka - Estetická medicína",
-      image: doctor1,
+      name: "Mgr. Anna Nováková",
+      position: "Vedúca estetička",
+      image: teamMember1,
       description: "Špecializácia na neinvazívne estetické procedúry a laserové technológie."
     },
     {
       name: "Bc. Martina Kováčová",
       position: "Estetická špecialistka",
-      image: nurse1,
+      image: teamMember2,
       description: "Odborníčka na ošetrenie pleti, mezoterapiu a laserovú epiláciu."
     },
     {
       name: "Lucia Svobodová",
       position: "Wellness terapeutka",
-      image: therapist1,
+      image: teamMember3,
       description: "Certifikovaná terapeutka pre Head Spa a relaxačné wellness rituály."
+    },
+    {
+      name: "MUDr. Petra Horváthová",
+      position: "Estetická lekárka",
+      image: teamMember4,
+      description: "Špecializácia na estetickú medicínu a dermatologické ošetrenia."
     }
   ];
 
@@ -142,7 +149,7 @@ const About = () => {
               Za každým ošetrením stojí skúsený tím profesionálov, ktorí vám venujú plnú pozornosť a starostlivosť.
             </p>
             
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {teamMembers.map((member) => (
                 <div key={member.name} className="bg-card rounded-lg border border-border overflow-hidden group hover:shadow-elegant transition-all duration-300">
                   <div className="relative h-80 overflow-hidden">
