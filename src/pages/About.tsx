@@ -24,10 +24,10 @@ const About = () => {
       description: "Špecializácia na neinvazívne estetické procedúry a laserové technológie."
     },
     {
-      name: "Bc. Martina Kováčová",
-      position: "Estetická špecialistka",
+      name: "Evelin Kaczová",
+      position: "Kozmetička",
       image: teamMember2,
-      description: "Odborníčka na ošetrenie pleti, mezoterapiu a laserovú epiláciu."
+      description: "Dlhoročná prax v obore estetickej kozmetiky a starostlivosti o pleť."
     },
     {
       name: "Lucia Svobodová",
