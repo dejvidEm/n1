@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import logo from "@/assets/logo.png";
 
 const navigation = [
   { name: "Domov", href: "/" },
@@ -20,7 +21,7 @@ export const Header = () => {
       <nav className="container mx-auto flex items-center justify-between py-4 px-6" aria-label="Global">
         <div className="flex lg:flex-1">
           <Link to="/" className="-m-1.5 p-1.5">
-            <span className="font-display text-2xl font-semibold tracking-tight">N1 Pro</span>
+            <img src={logo} alt="N1 Pro Aesthetic Clinic" className="h-12 w-auto" />
           </Link>
         </div>
         
@@ -63,7 +64,7 @@ export const Header = () => {
           <div className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-background px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-border">
             <div className="flex items-center justify-between">
               <Link to="/" className="-m-1.5 p-1.5" onClick={() => setMobileMenuOpen(false)}>
-                <span className="font-display text-2xl font-semibold">N1 Pro</span>
+                <img src={logo} alt="N1 Pro Aesthetic Clinic" className="h-10 w-auto" />
               </Link>
               <Button
                 variant="ghost"
