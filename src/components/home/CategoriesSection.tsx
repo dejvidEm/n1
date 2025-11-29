@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Sparkles, Droplet, Users, Zap } from "lucide-react";
-import laserImage from "@/assets/services-laser.jpg";
+import laserImage from "@/assets/laser-hair-removal-device.jpg";
 import wellnessImage from "@/assets/services-wellness.jpg";
 import skincareImage from "@/assets/services-skincare.jpg";
 
