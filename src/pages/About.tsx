@@ -18,8 +18,8 @@ const About = () => {
 
   const teamMembers = [
     {
-      name: "Mgr. Anna Nováková",
-      position: "Vedúca estetička",
+      name: "Mgr. Eva Hromadová",
+      position: "Zdravotná sestra",
       image: teamMember1,
       description: "Špecializácia na neinvazívne estetické procedúry a laserové technológie."
     },
