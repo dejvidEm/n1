@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Instagram, Facebook, Mail, Phone, MapPin } from "lucide-react";
+import logo from "@/assets/logo.png";
 
 export const Footer = () => {
   return (
@@ -8,7 +9,7 @@ export const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Brand */}
           <div className="space-y-4">
-            <h3 className="font-display text-2xl font-semibold">N1 Pro</h3>
+            <img src={logo} alt="N1 Pro Aesthetic Clinic" className="h-16 w-auto" />
             <p className="text-sm text-muted-foreground">
               Estetická a wellness klinika
             </p>
