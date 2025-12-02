@@ -1,88 +1,131 @@
 import { Link } from "react-router-dom";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Sparkles, Droplet, Users, Zap } from "lucide-react";
-import laserImage from "@/assets/laser-hair-removal-device.jpg";
-import wellnessImage from "@/assets/services-wellness.jpg";
-import skincareImage from "@/assets/services-skincare.jpg";
-import infusionBarImage from "@/assets/services-infusion-bar.jpg";
+import { 
+  Sparkles, 
+  Droplet, 
+  Zap, 
+  Scissors, 
+  Heart, 
+  Leaf,
+  Eye,
+  Hand
+} from "lucide-react";
 
 const categories = [
   {
-    icon: Zap,
-    title: "Laserové odstránenie chĺpkov",
-    description: "Medicínske laserové technológie pre trvalé výsledky a maximálny komfort.",
-    href: "/sluzby#laserove-odstranenie",
-    image: laserImage
+    icon: Sparkles,
+    title: "Estetická medicína",
+    subtitle: "Regeneratívna terapia",
+    description: "Exozómy, mezoterapia, dermálne výplne a peelingy pre omladenie pleti.",
+    href: "/sluzby#esteticka-medicina"
   },
   {
     icon: Droplet,
     title: "Infúzny bar",
-    description: "Vitamínové a revitalizačné infúzie pre obnovenie energie a podporu imunity.",
-    href: "/sluzby#infuzny-bar",
-    image: infusionBarImage
+    subtitle: "Vitamínová terapia",
+    description: "Intravenózna terapia pre energiu, imunitu a regeneráciu organizmu.",
+    href: "/sluzby#infuzny-bar"
   },
   {
-    icon: Sparkles,
-    title: "Head Spa",
-    description: "Luxusný rituál starostlivosti o vlasovú pokožku a relaxáciu mysle.",
-    href: "/sluzby#head-spa",
-    image: wellnessImage
+    icon: Zap,
+    title: "Laserová epilácia",
+    subtitle: "ELISION PRO",
+    description: "Medicínsky diodový laser pre trvalé odstránenie chĺpkov.",
+    href: "/sluzby#laserove-odstranenie"
   },
   {
-    icon: Users,
-    title: "Estetická medicína",
-    description: "Profesionálne ošetrenia pre prirodzené odmladenie a korekciu tváre.",
-    href: "/sluzby#esteticka-medicina",
-    image: skincareImage
+    icon: Eye,
+    title: "Kozmetológia",
+    subtitle: "Profesionálna starostlivosť",
+    description: "Mihalnice, obočie, make-up a masáže tváre.",
+    href: "/sluzby#kozmetologia"
+  },
+  {
+    icon: Hand,
+    title: "Permanentný make-up",
+    subtitle: "Mikropigmentácia",
+    description: "Dlhodobé zvýraznenie obočia, pier a očných liniek.",
+    href: "/sluzby#permanentny-makeup"
+  },
+  {
+    icon: Leaf,
+    title: "Wellness & SPA",
+    subtitle: "Head Spa & Pedikúra",
+    description: "Relaxačné rituály, maderoterapia a starostlivosť o chodidlá.",
+    href: "/sluzby#wellness"
+  },
+  {
+    icon: Heart,
+    title: "Telové ošetrenia",
+    subtitle: "Body contouring",
+    description: "Regenerácia, spevnenie a modelácia postavy.",
+    href: "/sluzby#telove-osetrenia"
+  },
+  {
+    icon: Scissors,
+    title: "Vlasová starostlivosť",
+    subtitle: "Trichológia",
+    description: "Head Spa, mezoterapia vlasovej pokožky a stimulácia rastu.",
+    href: "/sluzby#vlasy"
   }
 ];
 
 export const CategoriesSection = () => {
   return (
-    <section className="py-24 bg-background">
+    <section className="py-24 md:py-32 bg-background">
       <div className="container mx-auto px-6">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-4xl md:text-5xl font-display font-semibold mb-4">
+        {/* Section Header */}
+        <div className="text-center max-w-3xl mx-auto mb-20">
+          <p className="text-sm uppercase tracking-[0.3em] text-accent mb-4">
+            Výber procedúr
+          </p>
+          <h2 className="text-4xl md:text-5xl font-display font-medium mb-6">
             Naše služby
           </h2>
-          <p className="text-muted-foreground text-lg">
-            Objavte komplexné riešenia pre vašu krásu a well-being
+          <div className="w-16 h-px bg-accent mx-auto mb-6"></div>
+          <p className="text-muted-foreground text-lg leading-relaxed">
+            Komplexná starostlivosť o vašu krásu a well-being
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {/* Categories Grid - iemspa.sk inspired */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-border max-w-6xl mx-auto">
           {categories.map((category) => {
             const Icon = category.icon;
             return (
-              <Card key={category.title} className="group hover:shadow-elegant transition-all duration-300 border-border bg-card overflow-hidden">
-                <div className="relative h-48 overflow-hidden">
-                  <img 
-                    src={category.image} 
-                    alt={category.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-card via-card/50 to-transparent"></div>
-                  <div className="absolute bottom-4 left-4 inline-flex p-3 rounded-full bg-background/90 backdrop-blur-sm">
-                    <Icon className="h-6 w-6 text-accent" />
-                  </div>
+              <Link 
+                key={category.title} 
+                to={category.href}
+                className="group bg-background p-8 md:p-10 text-center hover:bg-secondary/30 transition-all duration-500"
+              >
+                <div className="inline-flex items-center justify-center w-12 h-12 mb-6 text-accent">
+                  <Icon className="h-8 w-8 stroke-[1.5]" />
                 </div>
-                <CardHeader>
-                  <CardTitle className="text-xl font-display">{category.title}</CardTitle>
-                  <CardDescription className="text-muted-foreground">
-                    {category.description}
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <Button variant="link" asChild className="p-0 h-auto text-accent hover:text-accent/80">
-                    <Link to={category.href}>
-                      Zobraziť služby →
-                    </Link>
-                  </Button>
-                </CardContent>
-              </Card>
+                
+                <h3 className="text-base md:text-lg font-display font-medium tracking-wide mb-2 group-hover:text-accent transition-colors">
+                  {category.title}
+                </h3>
+                
+                <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-4">
+                  {category.subtitle}
+                </p>
+                
+                <p className="text-sm text-muted-foreground leading-relaxed hidden md:block">
+                  {category.description}
+                </p>
+              </Link>
             );
           })}
+        </div>
+
+        {/* Bottom CTA */}
+        <div className="text-center mt-16">
+          <Link 
+            to="/sluzby" 
+            className="inline-flex items-center text-sm uppercase tracking-[0.2em] text-accent hover:text-accent/80 transition-colors group"
+          >
+            Zobraziť všetky služby
+            <span className="ml-2 group-hover:translate-x-1 transition-transform">→</span>
+          </Link>
         </div>
       </div>
     </section>
