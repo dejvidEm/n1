@@ -148,6 +148,36 @@ export const servicesData: Category[] = [
             bookioUrl: "https://services.bookio.com/n1-pro-aesthetic/widget?lang=sk"
           },
           {
+            id: "neauvia-hydro-deluxe",
+            name: "Neauvia Hydro Deluxe – skinbooster s HA a kalciom",
+            description: "Intenzívna hydratácia a spevnenie pokožky s vysoko kvalitnou HA a kalciom 25+.",
+            duration: "1h",
+            price: "190 €",
+            benefits: ["Intenzívna hydratácia", "Spevnenie pokožky", "Zlepšenie hustoty a pružnosti"],
+            targetGroup: "Pre osoby 25+ hľadajúce hĺbkovú hydratáciu",
+            bookioUrl: "https://services.bookio.com/n1-pro-aesthetic/widget?lang=sk"
+          },
+          {
+            id: "pb-serum",
+            name: "PB Sérum – enzýmová mezoterapia",
+            description: "Bioaktívne enzýmy pre jazvy, strie, zápaly a lokálny tuk 18+.",
+            duration: "40min",
+            price: "120 €",
+            benefits: ["Redukcia jaziev a strií", "Zlepšenie štruktúry pokožky", "Lokálna redukcia tuku"],
+            targetGroup: "Pre osoby s jazvami, striami alebo lokálnym tukom",
+            bookioUrl: "https://services.bookio.com/n1-pro-aesthetic/widget?lang=sk"
+          },
+          {
+            id: "injekcna-enzymova",
+            name: "Injekčná mezoterapia – enzýmová",
+            description: "Modelácia kontúr, redukcia tuku a jaziev 18+. Využíva vysoko aktívne enzýmy neživočíšneho pôvodu.",
+            duration: "1h",
+            price: "individuálna",
+            benefits: ["Redukcia dvojitej brady", "Lokálny tuk", "Vačky pod očami", "Jazvy"],
+            targetGroup: "Pre osoby hľadajúce modeláciu kontúr",
+            bookioUrl: "https://services.bookio.com/n1-pro-aesthetic/widget?lang=sk"
+          },
+          {
             id: "profhilo",
             name: "Profhilo – hydratačný lifting",
             description: "Biostimulačná HA pre obnovu elasticity 30+. Najčistejšia koncentrovaná kyselina hyalurónová.",
@@ -428,6 +458,36 @@ export const servicesData: Category[] = [
             benefits: ["Potlačenie bolesti", "Zníženie horúčky"],
             targetGroup: "Pre osoby s akútnou bolesťou",
             bookioUrl: "https://services.bookio.com/n1-pro-aesthetic/widget?lang=sk"
+          },
+          {
+            id: "guajacuran",
+            name: "Guajacuran infúzia",
+            description: "Uvoľnenie svalového napätia, stresu a psychická relaxácia.",
+            duration: "1h",
+            price: "30 €",
+            benefits: ["Uvoľnenie svalov", "Zmiernenie úzkosti", "Psychická relaxácia"],
+            targetGroup: "Pre osoby s nespavosťou, stresom a migrénami",
+            bookioUrl: "https://services.bookio.com/n1-pro-aesthetic/widget?lang=sk"
+          },
+          {
+            id: "magnezium",
+            name: "Magnézium infúzia",
+            description: "Podpora nervového systému, zníženie stresu a svalových kŕčov.",
+            duration: "1h",
+            price: "30 €",
+            benefits: ["Uvoľnenie svalov", "Zmiernenie bolestí hlavy", "Zníženie nervového podráždenia"],
+            targetGroup: "Pre osoby s migrénami, kŕčmi a únavou",
+            bookioUrl: "https://services.bookio.com/n1-pro-aesthetic/widget?lang=sk"
+          },
+          {
+            id: "degan",
+            name: "Degan injekcia",
+            description: "Úľava pri nevoľnosti, zvracaní a tráviacich ťažkostiach.",
+            duration: "10min",
+            price: "10 €",
+            benefits: ["Tlmenie nevoľnosti", "Podpora motility žalúdka", "Úľava od plnosti"],
+            targetGroup: "Pre osoby s gastrointestinálnymi ťažkosťami",
+            bookioUrl: "https://services.bookio.com/n1-pro-aesthetic/widget?lang=sk"
           }
         ]
       }
@@ -630,6 +690,64 @@ export const servicesData: Category[] = [
         ]
       },
       {
+        id: "makeup",
+        name: "Make-up",
+        description: "Profesionálne líčenie pre každý typ udalosti – od prirodzeného denného vzhľadu až po luxusný svadobný glam.",
+        services: [
+          {
+            id: "makeup-denny",
+            name: "Denný make-up – Natural Beauty",
+            description: "Jemné denné líčenie pre prirodzený vzhľad.",
+            duration: "30min",
+            price: "22 €",
+            benefits: ["Prirodzený vzhľad", "Dlhá výdrž", "Profesionálna kozmetika"],
+            targetGroup: "Pre každodenné nosenie",
+            bookioUrl: "https://services.bookio.com/n1-pro-aesthetic/widget?lang=sk"
+          },
+          {
+            id: "makeup-fotenie",
+            name: "Líčenie pre fotenie – Photo Ready",
+            description: "Make-up s vysokou krycou schopnosťou a fotostabilitou.",
+            duration: "1h",
+            price: "35 €",
+            benefits: ["Fotostabilita", "Vysoká krycia schopnosť", "Profesionálny výsledok"],
+            targetGroup: "Pre fotenie a špeciálne príležitosti",
+            bookioUrl: "https://services.bookio.com/n1-pro-aesthetic/widget?lang=sk"
+          },
+          {
+            id: "makeup-skusobny-svadobny",
+            name: "Skúšobný svadobný make-up",
+            description: "Skúšobné líčenie pre nevesty na overenie finálneho vzhľadu.",
+            duration: "1h",
+            price: "30 €",
+            benefits: ["Overenie vzhľadu", "Konzultácia", "Prispôsobenie štýlu"],
+            targetGroup: "Pre nevesty pred svadbou",
+            bookioUrl: "https://services.bookio.com/n1-pro-aesthetic/widget?lang=sk"
+          },
+          {
+            id: "makeup-svadobny",
+            name: "Svadobný make-up – Bridal Glow",
+            description: "Exkluzívny svadobný styling s dlhou výdržou.",
+            duration: "1h 15min",
+            price: "45 €",
+            benefits: ["Luxusný vzhľad", "Dlhá výdrž", "Odolnosť voči teplu a vlhkosti"],
+            targetGroup: "Pre nevesty",
+            bookioUrl: "https://services.bookio.com/n1-pro-aesthetic/widget?lang=sk",
+            isPopular: true
+          },
+          {
+            id: "makeup-vecerny",
+            name: "Večerný / príležitostný make-up – Glam Look",
+            description: "Večerný glam make-up pre špeciálne príležitosti.",
+            duration: "1h",
+            price: "30 €",
+            benefits: ["Dramatický efekt", "Dlhá výdrž", "Profesionálny výsledok"],
+            targetGroup: "Pre večerné udalosti a oslavy",
+            bookioUrl: "https://services.bookio.com/n1-pro-aesthetic/widget?lang=sk"
+          }
+        ]
+      },
+      {
         id: "masaze-tvare",
         name: "Masáže tváre",
         description: "Relaxačné a regeneračné masáže tváre a dekoltu.",
@@ -720,7 +838,9 @@ export const servicesData: Category[] = [
           { id: "laser-bokombrady", name: "Bokombrady", duration: "30min", price: "20 €", benefits: ["Trvalá redukcia chĺpkov"], targetGroup: "Pre mužov", bookioUrl: "https://services.bookio.com/n1-pro-aesthetic/widget?lang=sk" },
           { id: "laser-lica", name: "Líca", duration: "30min", price: "20 €", benefits: ["Trvalá redukcia chĺpkov"], targetGroup: "Pre ženy aj mužov", bookioUrl: "https://services.bookio.com/n1-pro-aesthetic/widget?lang=sk" },
           { id: "laser-krk", name: "Krk", duration: "30min", price: "30 €", benefits: ["Trvalá redukcia chĺpkov"], targetGroup: "Pre ženy aj mužov", bookioUrl: "https://services.bookio.com/n1-pro-aesthetic/widget?lang=sk" },
-          { id: "laser-cela-tvar", name: "Celá tvár", duration: "1h", price: "79 €", benefits: ["Kompletné ošetrenie tváre"], targetGroup: "Pre ženy aj mužov", bookioUrl: "https://services.bookio.com/n1-pro-aesthetic/widget?lang=sk", isPopular: true }
+          { id: "laser-cela-tvar", name: "Celá tvár", duration: "1h", price: "79 €", benefits: ["Kompletné ošetrenie tváre"], targetGroup: "Pre ženy aj mužov", bookioUrl: "https://services.bookio.com/n1-pro-aesthetic/widget?lang=sk", isPopular: true },
+          { id: "laser-obocie", name: "Obočie", duration: "15min", price: "10 €", benefits: ["Trvalá redukcia chĺpkov"], targetGroup: "Pre ženy aj mužov", bookioUrl: "https://services.bookio.com/n1-pro-aesthetic/widget?lang=sk" },
+          { id: "laser-sija", name: "Šija", duration: "30min", price: "20 €", benefits: ["Trvalá redukcia chĺpkov"], targetGroup: "Pre ženy aj mužov", bookioUrl: "https://services.bookio.com/n1-pro-aesthetic/widget?lang=sk" }
         ]
       },
       {
@@ -743,10 +863,17 @@ export const servicesData: Category[] = [
           { id: "laser-bikiny", name: "Bikiny", duration: "30min", price: "69 €", benefits: ["Trvalá redukcia chĺpkov"], targetGroup: "Pre ženy", bookioUrl: "https://services.bookio.com/n1-pro-aesthetic/widget?lang=sk" },
           { id: "laser-bikiny-intime", name: "Bikiny + intime", duration: "40min", price: "88 €", benefits: ["Kompletné ošetrenie"], targetGroup: "Pre ženy", bookioUrl: "https://services.bookio.com/n1-pro-aesthetic/widget?lang=sk" },
           { id: "laser-full-intim", name: "Full intim", duration: "45min", price: "60 €", benefits: ["Kompletné ošetrenie"], targetGroup: "Pre ženy aj mužov", bookioUrl: "https://services.bookio.com/n1-pro-aesthetic/widget?lang=sk" },
+          { id: "laser-intim-oblast", name: "Intímna oblasť", duration: "30min", price: "50 €", benefits: ["Trvalá redukcia chĺpkov"], targetGroup: "Pre ženy aj mužov", bookioUrl: "https://services.bookio.com/n1-pro-aesthetic/widget?lang=sk" },
           { id: "laser-cele-brucho", name: "Celé brucho", duration: "30min", price: "70 €", benefits: ["Trvalá redukcia chĺpkov"], targetGroup: "Pre ženy aj mužov", bookioUrl: "https://services.bookio.com/n1-pro-aesthetic/widget?lang=sk" },
+          { id: "laser-pupok", name: "Pupok", duration: "10min", price: "20 €", benefits: ["Trvalá redukcia chĺpkov"], targetGroup: "Pre ženy aj mužov", bookioUrl: "https://services.bookio.com/n1-pro-aesthetic/widget?lang=sk" },
           { id: "laser-cely-chrbat", name: "Celý chrbát", duration: "1h", price: "175 €", benefits: ["Kompletné ošetrenie"], targetGroup: "Pre mužov", bookioUrl: "https://services.bookio.com/n1-pro-aesthetic/widget?lang=sk" },
           { id: "laser-hrud", name: "Hruď", duration: "30min", price: "100 €", benefits: ["Trvalá redukcia chĺpkov"], targetGroup: "Pre mužov", bookioUrl: "https://services.bookio.com/n1-pro-aesthetic/widget?lang=sk" },
-          { id: "laser-cele-ruky", name: "Celé ruky", duration: "30min", price: "89 €", benefits: ["Trvalá redukcia chĺpkov"], targetGroup: "Pre ženy aj mužov", bookioUrl: "https://services.bookio.com/n1-pro-aesthetic/widget?lang=sk" }
+          { id: "laser-okolie-bradaviek", name: "Okolie bradaviek", duration: "15min", price: "20 €", benefits: ["Trvalá redukcia chĺpkov"], targetGroup: "Pre ženy aj mužov", bookioUrl: "https://services.bookio.com/n1-pro-aesthetic/widget?lang=sk" },
+          { id: "laser-ramena", name: "Ramená", duration: "30min", price: "60 €", benefits: ["Trvalá redukcia chĺpkov"], targetGroup: "Pre ženy aj mužov", bookioUrl: "https://services.bookio.com/n1-pro-aesthetic/widget?lang=sk" },
+          { id: "laser-cele-ruky", name: "Celé ruky", duration: "30min", price: "89 €", benefits: ["Trvalá redukcia chĺpkov"], targetGroup: "Pre ženy aj mužov", bookioUrl: "https://services.bookio.com/n1-pro-aesthetic/widget?lang=sk" },
+          { id: "laser-ruky-predlaktie", name: "Ruky – predlaktie", duration: "30min", price: "50 €", benefits: ["Trvalá redukcia chĺpkov"], targetGroup: "Pre ženy aj mužov", bookioUrl: "https://services.bookio.com/n1-pro-aesthetic/widget?lang=sk" },
+          { id: "laser-hanky", name: "Hánky", duration: "10min", price: "10 €", benefits: ["Trvalá redukcia chĺpkov"], targetGroup: "Pre ženy aj mužov", bookioUrl: "https://services.bookio.com/n1-pro-aesthetic/widget?lang=sk" },
+          { id: "laser-zadok", name: "Zadok – sedacia časť", duration: "30min", price: "100 €", benefits: ["Trvalá redukcia chĺpkov"], targetGroup: "Pre ženy aj mužov", bookioUrl: "https://services.bookio.com/n1-pro-aesthetic/widget?lang=sk" }
         ]
       }
     ]
@@ -842,6 +969,7 @@ export const servicesData: Category[] = [
           { id: "cukor-ruky-lakte", name: "Ruky po lakte", duration: "20min", price: "12 €", benefits: ["Šetrná depilácia"], targetGroup: "Pre ženy", bookioUrl: "https://services.bookio.com/n1-pro-aesthetic/widget?lang=sk" },
           { id: "cukor-chrbat", name: "Chrbát", duration: "40min", price: "25 €", benefits: ["Hladká pokožka"], targetGroup: "Pre mužov", bookioUrl: "https://services.bookio.com/n1-pro-aesthetic/widget?lang=sk" },
           { id: "cukor-brucho", name: "Brucho celé", duration: "20min", price: "12 €", benefits: ["Šetrné odstránenie"], targetGroup: "Pre ženy aj mužov", bookioUrl: "https://services.bookio.com/n1-pro-aesthetic/widget?lang=sk" },
+          { id: "cukor-pas-bruska", name: "Pás bruška", duration: "10min", price: "6 €", benefits: ["Rýchle ošetrenie"], targetGroup: "Pre ženy aj mužov", bookioUrl: "https://services.bookio.com/n1-pro-aesthetic/widget?lang=sk" },
           { id: "cukor-zadok", name: "Zadok", duration: "20min", price: "10 €", benefits: ["Hladká pokožka"], targetGroup: "Pre ženy aj mužov", bookioUrl: "https://services.bookio.com/n1-pro-aesthetic/widget?lang=sk" },
           { id: "cukor-horna-pera", name: "Horná pera", duration: "10min", price: "5 €", benefits: ["Rýchle ošetrenie"], targetGroup: "Pre ženy", bookioUrl: "https://services.bookio.com/n1-pro-aesthetic/widget?lang=sk" },
           { id: "cukor-brada", name: "Brada", duration: "10min", price: "6 €", benefits: ["Presné odstránenie"], targetGroup: "Pre ženy", bookioUrl: "https://services.bookio.com/n1-pro-aesthetic/widget?lang=sk" },
