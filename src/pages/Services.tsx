@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useSearchParams } from "react-router-dom";
 import { Layout } from "@/components/layout/Layout";
 import { servicesData } from "@/data/servicesData";
 import { Button } from "@/components/ui/button";
@@ -7,10 +8,32 @@ import { Clock, Users, AlertTriangle, ArrowRight, ChevronDown } from "lucide-rea
 import { cn } from "@/lib/utils";
 
 const Services = () => {
-  const [selectedCategory, setSelectedCategory] = useState(servicesData[0].id);
+  const [searchParams, setSearchParams] = useSearchParams();
+  const categoryFromUrl = searchParams.get("category");
+  
+  const initialCategory = categoryFromUrl && servicesData.find(c => c.id === categoryFromUrl)
+    ? categoryFromUrl
+    : servicesData[0].id;
+    
+  const [selectedCategory, setSelectedCategory] = useState(initialCategory);
   const [expandedSubcategory, setExpandedSubcategory] = useState<string | null>(
-    servicesData[0].subcategories?.[0]?.id || null
+    servicesData.find(c => c.id === initialCategory)?.subcategories?.[0]?.id || null
   );
+
+  // Handle URL changes
+  useEffect(() => {
+    if (categoryFromUrl && servicesData.find(c => c.id === categoryFromUrl)) {
+      setSelectedCategory(categoryFromUrl);
+      const category = servicesData.find(c => c.id === categoryFromUrl);
+      setExpandedSubcategory(category?.subcategories?.[0]?.id || null);
+    }
+  }, [categoryFromUrl]);
+
+  const handleCategoryChange = (categoryId: string) => {
+    setSelectedCategory(categoryId);
+    setExpandedSubcategory(servicesData.find(c => c.id === categoryId)?.subcategories?.[0]?.id || null);
+    setSearchParams({ category: categoryId });
+  };
 
   const currentCategory = servicesData.find(c => c.id === selectedCategory);
 
@@ -41,10 +64,7 @@ const Services = () => {
             {servicesData.map((category) => (
               <button
                 key={category.id}
-                onClick={() => {
-                  setSelectedCategory(category.id);
-                  setExpandedSubcategory(category.subcategories?.[0]?.id || null);
-                }}
+                onClick={() => handleCategoryChange(category.id)}
                 className={cn(
                   "px-4 py-2 text-sm uppercase tracking-[0.1em] transition-all duration-300 border",
                   selectedCategory === category.id
