@@ -19,16 +19,26 @@ export const PopularServices = () => {
   if (popularServices.length === 0) return null;
 
   return (
-    <section className="py-24 bg-background">
+    <section className="py-24 bg-background relative">
+      {/* Top subtle divider */}
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-border to-transparent"></div>
+      
       <div className="container mx-auto px-6">
         <AnimatedSection className="text-center max-w-3xl mx-auto mb-16">
-          <p className="text-sm uppercase tracking-[0.3em] text-accent mb-4">
+          {/* Decorative element */}
+          <div className="flex items-center justify-center gap-3 mb-6">
+            <div className="w-8 h-px bg-accent/60"></div>
+            <div className="w-1.5 h-1.5 rotate-45 bg-accent/60"></div>
+            <div className="w-8 h-px bg-accent/60"></div>
+          </div>
+          
+          <p className="text-sm uppercase tracking-[0.4em] text-accent mb-4">
             Obľúbené
           </p>
           <h2 className="text-4xl md:text-5xl font-display font-medium mb-4">
             Najpopulárnejšie služby
           </h2>
-          <div className="w-16 h-px bg-accent mx-auto mb-6"></div>
+          <div className="w-20 h-px bg-accent mx-auto mb-6"></div>
           <p className="text-muted-foreground text-lg">
             Naše najžiadanejšie ošetrenia pre vašu krásu a pohodu
           </p>
@@ -87,6 +97,9 @@ export const PopularServices = () => {
           ))}
         </div>
       </div>
+      
+      {/* Bottom subtle divider */}
+      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-border to-transparent"></div>
     </section>
   );
 };

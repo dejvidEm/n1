@@ -4,7 +4,10 @@ import { AnimatedSection } from "@/components/ui/AnimatedSection";
 
 export const AboutPreview = () => {
   return (
-    <section className="py-24 md:py-32 bg-secondary/30">
+    <section className="py-24 md:py-32 bg-secondary/30 relative">
+      {/* Top subtle divider */}
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-border to-transparent"></div>
+      
       <div className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -16,13 +19,22 @@ export const AboutPreview = () => {
                   alt="N1 Pro Aesthetic Clinic interiér"
                   className="w-full h-full object-cover"
                 />
+                {/* Decorative corner */}
+                <div className="absolute top-4 left-4 w-12 h-12 border-l border-t border-accent/30"></div>
+                <div className="absolute bottom-4 right-4 w-12 h-12 border-r border-b border-accent/30"></div>
               </div>
             </AnimatedSection>
             
             {/* Content */}
             <AnimatedSection animation="fade-right" duration={800} delay={200}>
               <div className="space-y-8">
-                <p className="text-sm uppercase tracking-[0.3em] text-accent">
+                {/* Decorative element */}
+                <div className="flex items-center gap-3">
+                  <div className="w-8 h-px bg-accent/60"></div>
+                  <div className="w-1.5 h-1.5 rotate-45 bg-accent/60"></div>
+                </div>
+                
+                <p className="text-sm uppercase tracking-[0.4em] text-accent">
                   O nás
                 </p>
                 
@@ -56,6 +68,9 @@ export const AboutPreview = () => {
           </div>
         </div>
       </div>
+      
+      {/* Bottom subtle divider */}
+      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-border to-transparent"></div>
     </section>
   );
 };
