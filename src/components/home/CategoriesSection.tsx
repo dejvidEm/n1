@@ -1,13 +1,13 @@
 import { Link } from "react-router-dom";
 import { 
   Sparkles, 
-  Droplet, 
   Zap, 
   Scissors, 
   Heart, 
   Leaf,
   Eye,
-  Hand
+  Hand,
+  Footprints
 } from "lucide-react";
 
 const categories = [
@@ -15,57 +15,57 @@ const categories = [
     icon: Sparkles,
     title: "Estetická medicína",
     subtitle: "Regeneratívna terapia",
-    description: "Exozómy, mezoterapia, dermálne výplne a peelingy pre omladenie pleti.",
-    href: "/sluzby#esteticka-medicina"
+    description: "Exozómy, mezoterapia, dermálne výplne, infúzny bar a peelingy.",
+    href: "/sluzby?category=esteticka-medicina"
   },
   {
-    icon: Droplet,
-    title: "Infúzny bar",
-    subtitle: "Vitamínová terapia",
-    description: "Intravenózna terapia pre energiu, imunitu a regeneráciu organizmu.",
-    href: "/sluzby#infuzny-bar"
+    icon: Eye,
+    title: "Kozmetológia",
+    subtitle: "Profesionálna starostlivosť",
+    description: "Mihalnice, obočie, regenerácia pleti a masáže tváre.",
+    href: "/sluzby?category=kozmetologia"
   },
   {
     icon: Zap,
     title: "Laserová epilácia",
     subtitle: "ELISION PRO",
     description: "Medicínsky diodový laser pre trvalé odstránenie chĺpkov.",
-    href: "/sluzby#laserove-odstranenie"
-  },
-  {
-    icon: Eye,
-    title: "Kozmetológia",
-    subtitle: "Profesionálna starostlivosť",
-    description: "Mihalnice, obočie, make-up a masáže tváre.",
-    href: "/sluzby#kozmetologia"
+    href: "/sluzby?category=laserove-odstranenie"
   },
   {
     icon: Hand,
     title: "Permanentný make-up",
     subtitle: "Mikropigmentácia",
     description: "Dlhodobé zvýraznenie obočia, pier a očných liniek.",
-    href: "/sluzby#permanentny-makeup"
-  },
-  {
-    icon: Leaf,
-    title: "Wellness & SPA",
-    subtitle: "Head Spa & Pedikúra",
-    description: "Relaxačné rituály, maderoterapia a starostlivosť o chodidlá.",
-    href: "/sluzby#wellness"
+    href: "/sluzby?category=permanentny-makeup"
   },
   {
     icon: Heart,
     title: "Telové ošetrenia",
-    subtitle: "Body contouring",
-    description: "Regenerácia, spevnenie a modelácia postavy.",
-    href: "/sluzby#telove-osetrenia"
+    subtitle: "Maderoterapia & Depilácia",
+    description: "Modelácia postavy, depilácia cukrovou pastou a spevnenie.",
+    href: "/sluzby?category=telove-osetrenia"
   },
   {
     icon: Scissors,
     title: "Vlasová starostlivosť",
-    subtitle: "Trichológia",
+    subtitle: "Head Spa & Trichológia",
     description: "Head Spa, mezoterapia vlasovej pokožky a stimulácia rastu.",
-    href: "/sluzby#vlasy"
+    href: "/sluzby?category=vlasy"
+  },
+  {
+    icon: Footprints,
+    title: "Pedikúra",
+    subtitle: "Starostlivosť o nohy",
+    description: "Mokrá pedikúra, wellness pedikúra a ošetrenie chodidiel.",
+    href: "/sluzby?category=pedikura"
+  },
+  {
+    icon: Leaf,
+    title: "Wellness procedúry",
+    subtitle: "Relaxácia & Masáže",
+    description: "Maderoterapia tváre, relaxačné masáže a regenerácia.",
+    href: "/sluzby?category=wellness"
   }
 ];
 
