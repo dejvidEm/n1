@@ -774,9 +774,86 @@ export const servicesData: Category[] = [
     ]
   },
   {
-    id: "wellness",
-    name: "Wellness & SPA",
-    description: "Relaxačné rituály a starostlivosť o telo a dušu.",
+    id: "telove-osetrenia",
+    name: "Telové ošetrenia",
+    description: "Modelácia postavy, spevnenie pokožky a redukcia celulitídy pomocou prírodných a moderných techník.",
+    subcategories: [
+      {
+        id: "maderoterapia-body",
+        name: "Maderoterapia tela",
+        description: "Prirodzené formovanie postavy a stimulácia lymfy pomocou drevených nástrojov.",
+        services: [
+          {
+            id: "maderoterapia-nohy",
+            name: "Maderoterapia nôh",
+            description: "Intenzívna lymfodrenáž a redukcia celulitídy na nohách.",
+            duration: "45min",
+            price: "35 €",
+            benefits: ["Redukcia celulitídy", "Zlepšenie cirkulácie", "Spevnenie pokožky"],
+            targetGroup: "Pre osoby s celulitídou a opuchmi",
+            bookioUrl: "https://services.bookio.com/n1-pro-aesthetic/widget?lang=sk",
+            isPopular: true
+          },
+          {
+            id: "maderoterapia-brucho",
+            name: "Maderoterapia brucha",
+            description: "Modelácia pása a redukcia tukových vankúšikov.",
+            duration: "30min",
+            price: "30 €",
+            benefits: ["Formovanie pása", "Detoxikácia", "Spevnenie"],
+            targetGroup: "Pre osoby hľadajúce modeláciu postavy",
+            bookioUrl: "https://services.bookio.com/n1-pro-aesthetic/widget?lang=sk"
+          },
+          {
+            id: "maderoterapia-zadok",
+            name: "Maderoterapia zadku",
+            description: "Lifting a spevnenie zadku pomocou drevených nástrojov.",
+            duration: "30min",
+            price: "30 €",
+            benefits: ["Lifting efekt", "Spevnenie", "Zlepšenie textúry kože"],
+            targetGroup: "Pre osoby hľadajúce spevnenie zadku",
+            bookioUrl: "https://services.bookio.com/n1-pro-aesthetic/widget?lang=sk"
+          },
+          {
+            id: "maderoterapia-cele-telo",
+            name: "Maderoterapia celého tela",
+            description: "Komplexné ošetrenie celého tela pre maximálne výsledky.",
+            duration: "1h 30min",
+            price: "75 €",
+            benefits: ["Celková detoxikácia", "Modelácia postavy", "Redukcia celulitídy"],
+            targetGroup: "Pre komplexnú starostlivosť o postavu",
+            bookioUrl: "https://services.bookio.com/n1-pro-aesthetic/widget?lang=sk"
+          }
+        ]
+      },
+      {
+        id: "depilacia-cukor",
+        name: "Depilácia cukrovou pastou",
+        description: "Šetrná, prírodná a vysoko účinná metóda odstránenia chĺpkov pre hladkú a zdravú pokožku.",
+        services: [
+          { id: "cukor-bikiny-brazilian", name: "Bikiny hlboké (Brazilian)", duration: "35min", price: "22 €", benefits: ["Prírodná metóda", "Bez zarastania"], targetGroup: "Pre ženy", bookioUrl: "https://services.bookio.com/n1-pro-aesthetic/widget?lang=sk" },
+          { id: "cukor-bikiny-klasicke", name: "Bikiny klasické", duration: "30min", price: "15 €", benefits: ["Šetrné odstránenie"], targetGroup: "Pre ženy", bookioUrl: "https://services.bookio.com/n1-pro-aesthetic/widget?lang=sk" },
+          { id: "cukor-hollywood", name: "Intímna oblasť komplet (Hollywood)", duration: "50min", price: "28 €", benefits: ["Kompletné ošetrenie"], targetGroup: "Pre ženy", bookioUrl: "https://services.bookio.com/n1-pro-aesthetic/widget?lang=sk", isPopular: true },
+          { id: "cukor-nohy-cele", name: "Nohy celé", duration: "45min", price: "26 €", benefits: ["Dlhotrvajúci efekt"], targetGroup: "Pre ženy", bookioUrl: "https://services.bookio.com/n1-pro-aesthetic/widget?lang=sk" },
+          { id: "cukor-nohy-kolena", name: "Nohy po kolená", duration: "30min", price: "18 €", benefits: ["Hladká pokožka"], targetGroup: "Pre ženy", bookioUrl: "https://services.bookio.com/n1-pro-aesthetic/widget?lang=sk" },
+          { id: "cukor-stehna", name: "Stehná", duration: "30min", price: "16 €", benefits: ["Jemný peeling efekt"], targetGroup: "Pre ženy", bookioUrl: "https://services.bookio.com/n1-pro-aesthetic/widget?lang=sk" },
+          { id: "cukor-podpazusie", name: "Podpazušie", duration: "15min", price: "10 €", benefits: ["Rýchle ošetrenie"], targetGroup: "Pre ženy aj mužov", bookioUrl: "https://services.bookio.com/n1-pro-aesthetic/widget?lang=sk" },
+          { id: "cukor-ruky-cele", name: "Ruky celé", duration: "30min", price: "18 €", benefits: ["Hladké ruky"], targetGroup: "Pre ženy", bookioUrl: "https://services.bookio.com/n1-pro-aesthetic/widget?lang=sk" },
+          { id: "cukor-ruky-lakte", name: "Ruky po lakte", duration: "20min", price: "12 €", benefits: ["Šetrná depilácia"], targetGroup: "Pre ženy", bookioUrl: "https://services.bookio.com/n1-pro-aesthetic/widget?lang=sk" },
+          { id: "cukor-chrbat", name: "Chrbát", duration: "40min", price: "25 €", benefits: ["Hladká pokožka"], targetGroup: "Pre mužov", bookioUrl: "https://services.bookio.com/n1-pro-aesthetic/widget?lang=sk" },
+          { id: "cukor-brucho", name: "Brucho celé", duration: "20min", price: "12 €", benefits: ["Šetrné odstránenie"], targetGroup: "Pre ženy aj mužov", bookioUrl: "https://services.bookio.com/n1-pro-aesthetic/widget?lang=sk" },
+          { id: "cukor-zadok", name: "Zadok", duration: "20min", price: "10 €", benefits: ["Hladká pokožka"], targetGroup: "Pre ženy aj mužov", bookioUrl: "https://services.bookio.com/n1-pro-aesthetic/widget?lang=sk" },
+          { id: "cukor-horna-pera", name: "Horná pera", duration: "10min", price: "5 €", benefits: ["Rýchle ošetrenie"], targetGroup: "Pre ženy", bookioUrl: "https://services.bookio.com/n1-pro-aesthetic/widget?lang=sk" },
+          { id: "cukor-brada", name: "Brada", duration: "10min", price: "6 €", benefits: ["Presné odstránenie"], targetGroup: "Pre ženy", bookioUrl: "https://services.bookio.com/n1-pro-aesthetic/widget?lang=sk" },
+          { id: "cukor-tvar", name: "Lícne partie / celá tvár", duration: "15min", price: "10 €", benefits: ["Jemná pokožka"], targetGroup: "Pre ženy", bookioUrl: "https://services.bookio.com/n1-pro-aesthetic/widget?lang=sk" }
+        ]
+      }
+    ]
+  },
+  {
+    id: "vlasy",
+    name: "Vlasová starostlivosť",
+    description: "Trichológia, Head Spa a mezoterapia vlasovej pokožky pre zdravé a silné vlasy.",
     subcategories: [
       {
         id: "head-spa",
@@ -784,31 +861,218 @@ export const servicesData: Category[] = [
         description: "Luxusný rituál starostlivosti o vlasovú pokožku a relaxáciu mysle.",
         services: [
           {
-            id: "head-spa-ritual",
-            name: "Head Spa rituál",
-            description: "Hĺbkový wellness zážitok pre pokožku hlavy s masážou a aromaterapiou.",
-            duration: "1h",
-            price: "individuálna",
-            benefits: ["Hlboká relaxácia", "Zlepšenie kvality vlasov", "Stimulácia rastu vlasov"],
+            id: "head-spa-basic",
+            name: "Head Spa Basic",
+            description: "Relaxačná masáž pokožky hlavy s aromaterapiou.",
+            duration: "30min",
+            price: "25 €",
+            benefits: ["Relaxácia", "Zlepšenie cirkulácie", "Uvoľnenie napätia"],
             targetGroup: "Pre všetkých hľadajúcich relaxáciu",
+            bookioUrl: "https://services.bookio.com/n1-pro-aesthetic/widget?lang=sk"
+          },
+          {
+            id: "head-spa-premium",
+            name: "Head Spa Premium",
+            description: "Hĺbkový wellness zážitok pre pokožku hlavy s masážou, peelingom a výživnou maskou.",
+            duration: "1h",
+            price: "45 €",
+            benefits: ["Hlboká relaxácia", "Zlepšenie kvality vlasov", "Stimulácia rastu vlasov"],
+            targetGroup: "Pre komplexnú starostlivosť o vlasy",
             bookioUrl: "https://services.bookio.com/n1-pro-aesthetic/widget?lang=sk",
             isPopular: true
           }
         ]
       },
       {
-        id: "pedikura",
-        name: "Pedikúra",
-        description: "Profesionálna starostlivosť o chodidlá.",
+        id: "vlasova-terapia",
+        name: "Vlasová terapia",
+        description: "Profesionálna starostlivosť pri vypadávaní vlasov a problémoch s vlasovou pokožkou.",
         services: [
           {
-            id: "pedikura-klasicka",
-            name: "Klasická pedikúra",
-            description: "Základná starostlivosť o chodidlá a nechty.",
-            duration: "45min",
-            price: "individuálna",
-            benefits: ["Úprava nechtov", "Odstránenie ztvrdnutej kože", "Hydratácia"],
+            id: "mezoterapia-vlasy",
+            name: "Mezoterapia vlasovej pokožky",
+            description: "Stimulácia rastu vlasov pomocou mikroinjekcií vitamínov a rastových faktorov.",
+            duration: "1h",
+            price: "85 €",
+            benefits: ["Aktivácia vlasových folikulov", "Posilnenie korienkov", "Podpora rastu"],
+            targetGroup: "Pre osoby s vypadávaním vlasov",
+            bookioUrl: "https://services.bookio.com/n1-pro-aesthetic/widget?lang=sk",
+            isPopular: true
+          },
+          {
+            id: "exozomy-vlasy",
+            name: "Exozómy pre vlasy",
+            description: "Najmodernejšia regenerácia vlasových folikulov pomocou exozómov.",
+            duration: "1h",
+            price: "od 200 €",
+            benefits: ["Bunková regenerácia", "Zastavenie vypadávania", "Podpora hustoty vlasov"],
+            targetGroup: "Pre osoby s pokročilým vypadávaním vlasov",
+            bookioUrl: "https://services.bookio.com/n1-pro-aesthetic/widget?lang=sk"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    id: "pedikura",
+    name: "Pedikúra",
+    description: "Profesionálna starostlivosť o zdravé a krásne chodidlá.",
+    subcategories: [
+      {
+        id: "pedikura-sluzby",
+        name: "Pedikúra",
+        description: "Komplexná odborná starostlivosť o chodidlá pre zdravie a krásu nôh.",
+        services: [
+          {
+            id: "mokra-pedikura",
+            name: "Mokrá pedikúra",
+            description: "Komplexná pedikúra s kúpeľom, odstránením zrohovatenej kože, úpravou nechtov a hydratačnou masážou.",
+            duration: "1h",
+            price: "od 22 €",
+            benefits: ["Odstránenie zrohovatenej kože", "Úprava nechtov", "Hydratácia"],
             targetGroup: "Pre pravidelnú starostlivosť o nohy",
+            bookioUrl: "https://services.bookio.com/n1-pro-aesthetic/widget?lang=sk",
+            isPopular: true
+          },
+          {
+            id: "mokra-pedikura-lak",
+            name: "Mokrá pedikúra s lakovaním",
+            description: "Kompletné ošetrenie chodidiel doplnené o lakovanie podľa výberu.",
+            duration: "1h 15min",
+            price: "25 €",
+            benefits: ["Komplexné ošetrenie", "Estetický vzhľad"],
+            targetGroup: "Pre dokonale upravené nohy",
+            bookioUrl: "https://services.bookio.com/n1-pro-aesthetic/widget?lang=sk"
+          },
+          {
+            id: "wellness-pedikura",
+            name: "Wellness pedikúra",
+            description: "Luxusná procedúra spojená s peelingom, parafínovým zábalom, masážou a lakovaním.",
+            duration: "2h",
+            price: "32 €",
+            benefits: ["Luxusný zážitok", "Hlboká regenerácia", "Uvoľnenie"],
+            targetGroup: "Pre dokonale jemné a oddýchnuté chodidlá",
+            bookioUrl: "https://services.bookio.com/n1-pro-aesthetic/widget?lang=sk"
+          },
+          { id: "pedikura-masaz", name: "Masáž chodidiel – relaxačná", duration: "15min", price: "8 €", benefits: ["Uvoľnenie napätia", "Zlepšenie cirkulácie"], targetGroup: "Ako doplnok k pedikúre", bookioUrl: "https://services.bookio.com/n1-pro-aesthetic/widget?lang=sk" },
+          { id: "pedikura-parafin", name: "Parafínový zábal chodidiel", duration: "30min", price: "7 €", benefits: ["Hlboká hydratácia", "Regenerácia"], targetGroup: "Pre suché chodidlá", bookioUrl: "https://services.bookio.com/n1-pro-aesthetic/widget?lang=sk" },
+          { id: "pedikura-peeling", name: "Peeling chodidiel", duration: "30min", price: "5 €", benefits: ["Zjemnenie pokožky", "Revitalizácia"], targetGroup: "Pre zhrubnutú pokožku", bookioUrl: "https://services.bookio.com/n1-pro-aesthetic/widget?lang=sk" },
+          { id: "pedikura-kurie-oko", name: "Odstránenie kurieho oka / otlaku", duration: "15min", price: "5 €", benefits: ["Úľava od bolesti", "Profesionálne ošetrenie"], targetGroup: "Pre bolestivé ložiská", bookioUrl: "https://services.bookio.com/n1-pro-aesthetic/widget?lang=sk" },
+          { id: "pedikura-zarasteny-necht", name: "Ošetrenie zarasteného nechtu", duration: "20min", price: "7 €", benefits: ["Uvoľnenie", "Prevencia zápalu"], targetGroup: "Pri zarastených nechtoch", bookioUrl: "https://services.bookio.com/n1-pro-aesthetic/widget?lang=sk" },
+          { id: "pedikura-mykoza", name: "Ošetrenie mykózy nechtu", duration: "15min", price: "4 €", benefits: ["Dezinfekcia", "Liečba"], targetGroup: "Pri plesňových infekciách", bookioUrl: "https://services.bookio.com/n1-pro-aesthetic/widget?lang=sk" },
+          { id: "pedikura-lakovanie", name: "Lakovanie nechtov – klasický lak", duration: "10min", price: "5 €", benefits: ["Estetický vzhľad"], targetGroup: "Pre upravené nechty", bookioUrl: "https://services.bookio.com/n1-pro-aesthetic/widget?lang=sk" },
+          { id: "pedikura-strihanie", name: "Strihanie nechtov (bez pedikúry)", duration: "10min", price: "6 €", benefits: ["Rýchla úprava"], targetGroup: "Pre pravidelnú údržbu", bookioUrl: "https://services.bookio.com/n1-pro-aesthetic/widget?lang=sk" }
+        ]
+      }
+    ]
+  },
+  {
+    id: "wellness",
+    name: "Wellness procedúry",
+    description: "Relaxačné rituály a procedúry pre telo aj dušu.",
+    subcategories: [
+      {
+        id: "maderoterapia-tvar",
+        name: "Maderoterapia tváre",
+        description: "Neinvazívne spevnenie a detoxikácia tváre pomocou drevených nástrojov.",
+        services: [
+          {
+            id: "maderoterapia-face-basic",
+            name: "Maderoterapia face Basic",
+            description: "Neinvazívne spevnenie, detoxikácia a omladenie tváre pomocou drevených nástrojov.",
+            duration: "25min",
+            price: "20 €",
+            benefits: ["Stimulácia lymfy", "Spevnenie kontúr", "Relaxácia"],
+            targetGroup: "Pre osveženie a spevnenie tváre",
+            bookioUrl: "https://services.bookio.com/n1-pro-aesthetic/widget?lang=sk"
+          },
+          {
+            id: "maderoterapia-face-gold",
+            name: "Maderoterapia face Gold",
+            description: "Luxusná detoxikačná masáž s peelingom a výživnou starostlivosťou.",
+            duration: "1h",
+            price: "30 €",
+            benefits: ["Zjemnenie vrások", "Spevnenie pokožky", "Luxusný zážitok"],
+            targetGroup: "Pre hĺbkovú revitalizáciu",
+            bookioUrl: "https://services.bookio.com/n1-pro-aesthetic/widget?lang=sk",
+            isPopular: true
+          }
+        ]
+      },
+      {
+        id: "masaze",
+        name: "Masáže",
+        description: "Relaxačné a regeneračné masáže pre telo a tvár.",
+        services: [
+          {
+            id: "masaz-tvare-klasicka",
+            name: "Klasická masáž tváre",
+            description: "Jemná stimulácia pre sviežu, uvoľnenú a žiarivú pleť.",
+            duration: "30min",
+            price: "17 €",
+            benefits: ["Zlepšenie prekrvenia", "Uvoľnenie napätia", "Rozjasnenie pleti"],
+            targetGroup: "Pre relaxáciu a regeneráciu",
+            bookioUrl: "https://services.bookio.com/n1-pro-aesthetic/widget?lang=sk"
+          },
+          {
+            id: "masaz-ruk",
+            name: "Masáž rúk",
+            description: "Uvoľnenie, prekrvenie a regenerácia namáhaných rúk.",
+            duration: "20min",
+            price: "15 €",
+            benefits: ["Uvoľnenie svalov", "Zlepšenie cirkulácie"],
+            targetGroup: "Pre namáhané ruky",
+            bookioUrl: "https://services.bookio.com/n1-pro-aesthetic/widget?lang=sk"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    id: "kurzy",
+    name: "Kurzy s medzinárodným certifikátom",
+    description: "Profesionálne vzdelávanie v oblasti estetiky a kozmetiky s medzinárodne uznávanými certifikátmi.",
+    subcategories: [
+      {
+        id: "kurzy-pmu",
+        name: "Kurzy permanentného make-upu",
+        description: "Komplexné vzdelávanie v technikách mikropigmentácie.",
+        services: [
+          {
+            id: "kurz-pmu-zakladny",
+            name: "Základný kurz PMU",
+            description: "Úvodný kurz permanentného make-upu pre začiatočníkov.",
+            duration: "individuálne",
+            price: "individuálna",
+            benefits: ["Medzinárodný certifikát", "Praktické skúsenosti", "Materiály v cene"],
+            targetGroup: "Pre záujemcov o kariéru v PMU",
+            bookioUrl: "https://services.bookio.com/n1-pro-aesthetic/widget?lang=sk"
+          },
+          {
+            id: "kurz-pmu-pokrocily",
+            name: "Pokročilý kurz PMU",
+            description: "Nadstavbový kurz pre skúsených technikov PMU.",
+            duration: "individuálne",
+            price: "individuálna",
+            benefits: ["Pokročilé techniky", "Individuálny prístup", "Certifikát"],
+            targetGroup: "Pre skúsených technikov PMU",
+            bookioUrl: "https://services.bookio.com/n1-pro-aesthetic/widget?lang=sk"
+          }
+        ]
+      },
+      {
+        id: "kurzy-kozmetika",
+        name: "Kurzy kozmetiky",
+        description: "Profesionálne kozmetické vzdelávanie.",
+        services: [
+          {
+            id: "kurz-mihalnice",
+            name: "Kurz predlžovania mihalníc",
+            description: "Komplexný kurz techník predlžovania mihalníc.",
+            duration: "individuálne",
+            price: "individuálna",
+            benefits: ["Praktický tréning", "Certifikát", "Štartovacie materiály"],
+            targetGroup: "Pre záujemcov o lash styling",
             bookioUrl: "https://services.bookio.com/n1-pro-aesthetic/widget?lang=sk"
           }
         ]
