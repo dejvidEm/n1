@@ -2,43 +2,52 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { servicesData } from "@/data/servicesData";
+import { Service } from "@/types/services";
 
 export const PopularServices = () => {
-  // Get popular services
-  const popularServices = servicesData
-    .flatMap(category => category.services)
-    .filter(service => service.isPopular)
+  // Get popular services from nested subcategories
+  const popularServices: Service[] = servicesData
+    .flatMap(category => category.subcategories || [])
+    .flatMap(subcategory => subcategory.services)
+    .filter(service => service?.isPopular)
     .slice(0, 3);
+
+  if (popularServices.length === 0) return null;
 
   return (
     <section className="py-24 bg-background">
       <div className="container mx-auto px-6">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-4xl md:text-5xl font-display font-semibold mb-4">
+          <p className="text-sm uppercase tracking-[0.3em] text-accent mb-4">
+            Obľúbené
+          </p>
+          <h2 className="text-4xl md:text-5xl font-display font-medium mb-4">
             Najpopulárnejšie služby
           </h2>
+          <div className="w-16 h-px bg-accent mx-auto mb-6"></div>
           <p className="text-muted-foreground text-lg">
             Naše najžiadanejšie ošetrenia pre vašu krásu a pohodu
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
           {popularServices.map((service) => (
-            <Card key={service.id} className="relative overflow-hidden hover:shadow-elegant transition-all duration-300">
-              <Badge className="absolute top-4 right-4 bg-accent text-accent-foreground">
+            <Card key={service.id} className="relative overflow-hidden hover:shadow-elegant transition-all duration-300 border-border">
+              <Badge className="absolute top-4 right-4 bg-accent text-accent-foreground text-xs">
                 Populárne
               </Badge>
               
-              <CardHeader>
-                <CardTitle className="text-2xl font-display">{service.name}</CardTitle>
-                <CardDescription className="text-base">
-                  {service.description}
-                </CardDescription>
+              <CardHeader className="pb-4">
+                <CardTitle className="text-xl font-display font-medium pr-20">{service.name}</CardTitle>
+                {service.description && (
+                  <CardDescription className="text-sm">
+                    {service.description}
+                  </CardDescription>
+                )}
               </CardHeader>
               
               <CardContent className="space-y-4">
                 <div>
-                  <h4 className="font-medium mb-2">Benefity:</h4>
                   <ul className="space-y-1 text-sm text-muted-foreground">
                     {service.benefits.slice(0, 3).map((benefit, index) => (
                       <li key={index} className="flex items-start">
@@ -48,10 +57,14 @@ export const PopularServices = () => {
                     ))}
                   </ul>
                 </div>
+
+                <div className="pt-2 border-t border-border">
+                  <p className="text-lg font-display text-accent mb-3">{service.price}</p>
+                </div>
                 
                 <Button 
                   asChild 
-                  className="w-full bg-accent hover:bg-accent/90 text-accent-foreground"
+                  className="w-full bg-accent hover:bg-accent/90 text-accent-foreground text-sm uppercase tracking-wider"
                 >
                   <a href={service.bookioUrl} target="_blank" rel="noopener noreferrer">
                     Rezervovať termín
