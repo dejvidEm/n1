@@ -4,10 +4,20 @@ import { AnimatedSection } from "@/components/ui/AnimatedSection";
 
 export const FinalCTA = () => {
   return (
-    <section className="py-24 md:py-32 bg-secondary/30">
+    <section className="py-24 md:py-32 bg-secondary/30 relative">
+      {/* Top subtle divider */}
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-border to-transparent"></div>
+      
       <div className="container mx-auto px-6">
         <AnimatedSection className="max-w-3xl mx-auto text-center space-y-8" animation="scale">
-          <p className="text-sm uppercase tracking-[0.3em] text-accent">
+          {/* Decorative element */}
+          <div className="flex items-center justify-center gap-3">
+            <div className="w-8 h-px bg-accent/60"></div>
+            <div className="w-1.5 h-1.5 rotate-45 bg-accent/60"></div>
+            <div className="w-8 h-px bg-accent/60"></div>
+          </div>
+          
+          <p className="text-sm uppercase tracking-[0.4em] text-accent">
             Infolinka & Objednávky
           </p>
           
@@ -15,7 +25,7 @@ export const FinalCTA = () => {
             Pripravení začať svoju cestu ku kráse?
           </h2>
           
-          <div className="w-16 h-px bg-accent mx-auto"></div>
+          <div className="w-20 h-px bg-accent mx-auto"></div>
           
           <p className="text-lg text-muted-foreground leading-relaxed max-w-xl mx-auto">
             Rezervujte si svoj termín online alebo nás kontaktujte telefonicky.
