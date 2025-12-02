@@ -1,32 +1,49 @@
 import { Button } from "@/components/ui/button";
-import { Calendar } from "lucide-react";
+import { ArrowRight, Phone } from "lucide-react";
 
 export const FinalCTA = () => {
   return (
-    <section className="py-24 bg-gradient-to-br from-secondary via-ivory to-champagne relative overflow-hidden">
-      <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiAxOGMzLjMxNCAwIDYgMi42ODYgNiA2cy0yLjY4NiA2LTYgNi02LTIuNjg2LTYtNiAyLjY4Ni02IDYtNnoiIHN0cm9rZT0icmdiYSgwLDAsMCwwLjAyKSIvPjwvZz48L3N2Zz4=')] opacity-40"></div>
-      
-      <div className="container relative z-10 mx-auto px-6">
+    <section className="py-24 md:py-32 bg-secondary/30">
+      <div className="container mx-auto px-6">
         <div className="max-w-3xl mx-auto text-center space-y-8">
-          <h2 className="text-4xl md:text-5xl font-display font-semibold">
+          <p className="text-sm uppercase tracking-[0.3em] text-accent">
+            Infolinka & Objednávky
+          </p>
+          
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-medium">
             Pripravení začať svoju cestu ku kráse?
           </h2>
           
-          <p className="text-lg text-muted-foreground leading-relaxed">
-            Rezervujte si svoj termín a objavte, ako môžeme pomôcť vám cítiť sa 
-            sebavedomejšie, krajšie a harmonickejšie.
+          <div className="w-16 h-px bg-accent mx-auto"></div>
+          
+          <p className="text-lg text-muted-foreground leading-relaxed max-w-xl mx-auto">
+            Rezervujte si svoj termín online alebo nás kontaktujte telefonicky.
           </p>
           
-          <Button 
-            size="lg" 
-            asChild
-            className="bg-accent hover:bg-accent/90 text-accent-foreground text-lg px-10 py-7 shadow-elegant"
-          >
-            <a href="https://services.bookio.com/n1-pro-aesthetic/widget?lang=sk" target="_blank" rel="noopener noreferrer">
-              <Calendar className="mr-2 h-5 w-5" />
-              Rezervovať termín
-            </a>
-          </Button>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
+            <Button 
+              size="lg" 
+              asChild
+              className="bg-accent hover:bg-accent/90 text-accent-foreground text-sm uppercase tracking-[0.15em] px-10 py-6"
+            >
+              <a href="https://services.bookio.com/n1-pro-aesthetic/widget?lang=sk" target="_blank" rel="noopener noreferrer">
+                Online rezervácia
+                <ArrowRight className="ml-3 h-4 w-4" />
+              </a>
+            </Button>
+            
+            <Button 
+              size="lg" 
+              variant="outline"
+              asChild
+              className="text-sm uppercase tracking-[0.15em] px-10 py-6 border-border hover:bg-background"
+            >
+              <a href="tel:+421918500282">
+                <Phone className="mr-3 h-4 w-4" />
+                0918 500 282
+              </a>
+            </Button>
+          </div>
         </div>
       </div>
     </section>
