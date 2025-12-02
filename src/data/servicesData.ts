@@ -649,6 +649,16 @@ export const servicesData: Category[] = [
             benefits: ["Zvýraznenie rias", "Bez potreby špirály"],
             targetGroup: "Pre svetlé alebo nevýrazné mihalnice",
             bookioUrl: "https://services.bookio.com/n1-pro-aesthetic/widget?lang=sk"
+          },
+          {
+            id: "lash-lift",
+            name: "Lash Lift",
+            description: "Prirodzené nadvihnutie a tvarovanie vlastných mihalníc bez predlžovania.",
+            duration: "1h",
+            price: "35 €",
+            benefits: ["Prirodzený vzhľad", "Opticky dlhšie riasy", "Výdrž 6-8 týždňov"],
+            targetGroup: "Pre milovníčky prirodzeného vzhľadu",
+            bookioUrl: "https://services.bookio.com/n1-pro-aesthetic/widget?lang=sk"
           }
         ]
       },
@@ -754,9 +764,9 @@ export const servicesData: Category[] = [
         services: [
           {
             id: "masaz-tvare-basic",
-            name: "Masáž tváre a dekoltu Basic",
+            name: "Masáž tváre a dekoltu",
             description: "Komplexná relaxačná masáž pre obnovu pružnosti a rozjasnenie pokožky.",
-            duration: "30min",
+            duration: "45min",
             price: "27 €",
             benefits: ["Stimulácia prekrvenia", "Uvoľnenie napätia", "Hydratácia"],
             targetGroup: "Pre relaxáciu a regeneráciu",
