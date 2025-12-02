@@ -4,6 +4,8 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { AnimatedSection } from "@/components/ui/AnimatedSection";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const faqs = [
   {
@@ -41,11 +43,13 @@ const faqs = [
 ];
 
 export const FAQSection = () => {
+  const { ref: accordionRef, isVisible: accordionVisible } = useScrollAnimation({ threshold: 0.1 });
+
   return (
     <section className="py-24 md:py-32 bg-background">
       <div className="container mx-auto px-6">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <AnimatedSection className="text-center max-w-3xl mx-auto mb-16">
           <p className="text-sm uppercase tracking-[0.3em] text-accent mb-4">
             Potrebujete poradiť?
           </p>
@@ -56,16 +60,21 @@ export const FAQSection = () => {
           <p className="text-muted-foreground text-lg leading-relaxed">
             Odpovede na najčastejšie otázky o našich službách a procedúrach
           </p>
-        </div>
+        </AnimatedSection>
 
         {/* FAQ Accordion */}
-        <div className="max-w-3xl mx-auto">
+        <div ref={accordionRef} className="max-w-3xl mx-auto">
           <Accordion type="single" collapsible className="space-y-4">
             {faqs.map((faq, index) => (
               <AccordionItem 
                 key={index} 
                 value={`item-${index}`}
-                className="border border-border bg-secondary/20 px-6 data-[state=open]:bg-secondary/40 transition-colors"
+                className="border border-border bg-secondary/20 px-6 data-[state=open]:bg-secondary/40 transition-all"
+                style={{
+                  opacity: accordionVisible ? 1 : 0,
+                  transform: accordionVisible ? "translateY(0)" : "translateY(16px)",
+                  transition: `all 0.5s ease-out ${index * 75}ms`
+                }}
               >
                 <AccordionTrigger className="text-left font-display text-base md:text-lg font-medium hover:no-underline hover:text-accent py-6">
                   {faq.question}
@@ -79,7 +88,7 @@ export const FAQSection = () => {
         </div>
 
         {/* Contact CTA */}
-        <div className="text-center mt-12">
+        <AnimatedSection className="text-center mt-12" delay={500}>
           <p className="text-muted-foreground mb-4">
             Nenašli ste odpoveď na vašu otázku?
           </p>
@@ -90,7 +99,7 @@ export const FAQSection = () => {
             Zavolajte nám: 0918 500 282
             <span className="ml-2 group-hover:translate-x-1 transition-transform">→</span>
           </a>
-        </div>
+        </AnimatedSection>
       </div>
     </section>
   );

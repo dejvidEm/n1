@@ -9,6 +9,8 @@ import {
   Hand,
   Footprints
 } from "lucide-react";
+import { AnimatedSection } from "@/components/ui/AnimatedSection";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const categories = [
   {
@@ -70,11 +72,13 @@ const categories = [
 ];
 
 export const CategoriesSection = () => {
+  const { ref: gridRef, isVisible: gridVisible } = useScrollAnimation({ threshold: 0.1 });
+
   return (
     <section className="py-24 md:py-32 bg-background">
       <div className="container mx-auto px-6">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-20">
+        <AnimatedSection className="text-center max-w-3xl mx-auto mb-20">
           <p className="text-sm uppercase tracking-[0.3em] text-accent mb-4">
             Výber procedúr
           </p>
@@ -85,17 +89,25 @@ export const CategoriesSection = () => {
           <p className="text-muted-foreground text-lg leading-relaxed">
             Komplexná starostlivosť o vašu krásu a well-being
           </p>
-        </div>
+        </AnimatedSection>
 
         {/* Categories Grid - iemspa.sk inspired */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-border max-w-6xl mx-auto">
-          {categories.map((category) => {
+        <div 
+          ref={gridRef}
+          className="grid grid-cols-2 md:grid-cols-4 gap-px bg-border max-w-6xl mx-auto"
+        >
+          {categories.map((category, index) => {
             const Icon = category.icon;
             return (
               <Link 
                 key={category.title} 
                 to={category.href}
                 className="group bg-background p-8 md:p-10 text-center hover:bg-secondary/30 transition-all duration-500"
+                style={{
+                  opacity: gridVisible ? 1 : 0,
+                  transform: gridVisible ? "translateY(0)" : "translateY(20px)",
+                  transition: `all 0.5s ease-out ${index * 75}ms`
+                }}
               >
                 <div className="inline-flex items-center justify-center w-12 h-12 mb-6 text-accent">
                   <Icon className="h-8 w-8 stroke-[1.5]" />
@@ -118,7 +130,7 @@ export const CategoriesSection = () => {
         </div>
 
         {/* Bottom CTA */}
-        <div className="text-center mt-16">
+        <AnimatedSection className="text-center mt-16" delay={400}>
           <Link 
             to="/sluzby" 
             className="inline-flex items-center text-sm uppercase tracking-[0.2em] text-accent hover:text-accent/80 transition-colors group"
@@ -126,7 +138,7 @@ export const CategoriesSection = () => {
             Zobraziť všetky služby
             <span className="ml-2 group-hover:translate-x-1 transition-transform">→</span>
           </Link>
-        </div>
+        </AnimatedSection>
       </div>
     </section>
   );
