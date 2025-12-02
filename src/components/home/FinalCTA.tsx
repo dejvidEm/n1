@@ -1,11 +1,12 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Phone } from "lucide-react";
+import { AnimatedSection } from "@/components/ui/AnimatedSection";
 
 export const FinalCTA = () => {
   return (
     <section className="py-24 md:py-32 bg-secondary/30">
       <div className="container mx-auto px-6">
-        <div className="max-w-3xl mx-auto text-center space-y-8">
+        <AnimatedSection className="max-w-3xl mx-auto text-center space-y-8" animation="scale">
           <p className="text-sm uppercase tracking-[0.3em] text-accent">
             Infolinka & Objednávky
           </p>
@@ -44,7 +45,7 @@ export const FinalCTA = () => {
               </a>
             </Button>
           </div>
-        </div>
+        </AnimatedSection>
       </div>
     </section>
   );

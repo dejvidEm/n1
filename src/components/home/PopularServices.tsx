@@ -3,8 +3,12 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { servicesData } from "@/data/servicesData";
 import { Service } from "@/types/services";
+import { AnimatedSection } from "@/components/ui/AnimatedSection";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 export const PopularServices = () => {
+  const { ref: cardsRef, isVisible: cardsVisible } = useScrollAnimation({ threshold: 0.1 });
+  
   // Get popular services from nested subcategories
   const popularServices: Service[] = servicesData
     .flatMap(category => category.subcategories || [])
@@ -17,7 +21,7 @@ export const PopularServices = () => {
   return (
     <section className="py-24 bg-background">
       <div className="container mx-auto px-6">
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <AnimatedSection className="text-center max-w-3xl mx-auto mb-16">
           <p className="text-sm uppercase tracking-[0.3em] text-accent mb-4">
             Obľúbené
           </p>
@@ -28,11 +32,19 @@ export const PopularServices = () => {
           <p className="text-muted-foreground text-lg">
             Naše najžiadanejšie ošetrenia pre vašu krásu a pohodu
           </p>
-        </div>
+        </AnimatedSection>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-          {popularServices.map((service) => (
-            <Card key={service.id} className="relative overflow-hidden hover:shadow-elegant transition-all duration-300 border-border">
+        <div ref={cardsRef} className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          {popularServices.map((service, index) => (
+            <Card 
+              key={service.id} 
+              className="relative overflow-hidden hover:shadow-elegant transition-all duration-300 border-border"
+              style={{
+                opacity: cardsVisible ? 1 : 0,
+                transform: cardsVisible ? "translateY(0)" : "translateY(24px)",
+                transition: `all 0.6s ease-out ${index * 150}ms`
+              }}
+            >
               <Badge className="absolute top-4 right-4 bg-accent text-accent-foreground text-xs">
                 Populárne
               </Badge>
@@ -49,8 +61,8 @@ export const PopularServices = () => {
               <CardContent className="space-y-4">
                 <div>
                   <ul className="space-y-1 text-sm text-muted-foreground">
-                    {service.benefits.slice(0, 3).map((benefit, index) => (
-                      <li key={index} className="flex items-start">
+                    {service.benefits.slice(0, 3).map((benefit, idx) => (
+                      <li key={idx} className="flex items-start">
                         <span className="mr-2 text-accent">•</span>
                         {benefit}
                       </li>
