@@ -57,12 +57,6 @@ const About = () => {
       position: "Manažér predaja",
       image: teamMember3,
       specialization: "Poradenstvo • Starostlivosť o klientov"
-    },
-    {
-      name: "Miroslava Kajanová",
-      position: "Recepčná asistentka",
-      image: teamMember4,
-      specialization: "Rezervácie • Administratíva"
     }
   ];
 
