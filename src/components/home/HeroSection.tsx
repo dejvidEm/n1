@@ -56,7 +56,7 @@ export const HeroSection = () => {
               size="lg" 
               variant="outline"
               asChild
-              className="text-sm uppercase tracking-[0.15em] px-10 py-6 border-white/30 text-white hover:bg-white/10 hover:border-white/50"
+              className="text-sm uppercase tracking-[0.15em] px-10 py-6 border-white/30 text-white bg-transparent hover:bg-white/10 hover:border-white/50"
             >
               <a href="/sluzby">
                 Naše služby
