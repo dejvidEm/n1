@@ -318,6 +318,28 @@ export const servicesData: Category[] = [
             targetGroup: "Pre osoby hľadajúce rýchle výsledky bez rekonvalescencie",
             contraindications: ["Aktívne akné a zápal", "Tmavý fototyp", "Čerstvé opálenie", "Tehotenstvo"],
             bookioUrl: "https://services.bookio.com/n1-pro-aesthetic/widget?lang=sk"
+          },
+          {
+            id: "povrchovy-antiaging-peeling",
+            name: "Povrchový anti-aging peeling",
+            description: "Jemné a šetrné ošetrenie na rozjasnenie, hydratáciu a prevenciu starnutia. Používajú sa nízke koncentrácie AHA kyselín (mandľová, mliečna, citrónová).",
+            duration: "30min",
+            price: "60 €",
+            benefits: ["Rozjasnenie pleti", "Jemná exfoliácia", "Zlepšenie hydratácie", "Zjemnenie vrások"],
+            targetGroup: "Pre začiatočníkov, citlivú pleť, prvé prejavy starnutia",
+            contraindications: ["Aktívne zápalové akné", "Ekzém alebo rosacea v akútnom štádiu", "Otvorené rany", "Alergia na AHA kyseliny"],
+            bookioUrl: "https://services.bookio.com/n1-pro-aesthetic/widget?lang=sk"
+          },
+          {
+            id: "tca-peeling",
+            name: "TCA peeling – hĺbková regenerácia",
+            description: "Intenzívne omladenie pre pleť so známkami poškodenia, jazvami a pigmentáciami. Využíva kyselinu trichlóroctovú vo vyššej koncentrácii.",
+            duration: "40min",
+            price: "80 €",
+            benefits: ["Hĺbková regenerácia", "Redukcia jaziev po akné", "Zlepšenie hyperpigmentácií", "Vyhladenie textúry"],
+            targetGroup: "Pre pleť potrebujúcu hĺbkovú obnovu, fotoaging, jazvy",
+            contraindications: ["Aktívne akné a zápal", "Tmavý fototyp", "Čerstvé opálenie", "Kožné infekcie", "Tehotenstvo", "Poruchy hojenia"],
+            bookioUrl: "https://services.bookio.com/n1-pro-aesthetic/widget?lang=sk"
           }
         ]
       },
