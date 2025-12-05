@@ -974,6 +974,20 @@ export const servicesData: Category[] = [
           { id: "laser-hanky", name: "Hánky", duration: "10min", price: "10 €", benefits: ["Trvalá redukcia chĺpkov"], targetGroup: "Pre ženy aj mužov", bookioUrl: "https://services.bookio.com/n1-pro-aesthetic/widget?lang=sk" },
           { id: "laser-zadok", name: "Zadok – sedacia časť", duration: "30min", price: "100 €", benefits: ["Trvalá redukcia chĺpkov"], targetGroup: "Pre ženy aj mužov", bookioUrl: "https://services.bookio.com/n1-pro-aesthetic/widget?lang=sk" }
         ]
+      },
+      {
+        id: "laser-kombinovane-balicky",
+        name: "Kombinované balíčky – zľava 20%",
+        description: "Výhodné kombinované balíčky viacerých zón so zľavou 20% z bežnej ceny.",
+        services: [
+          { id: "laser-balicek-bikiny-podpazusie", name: "Bikiny + podpazušie", description: "Kombinovaný balíček dvoch najpopulárnejších zón.", duration: "45min", price: "94 € (pôvodne 118 €)", benefits: ["20% zľava", "Trvalá redukcia chĺpkov", "Dve zóny v jednom"], targetGroup: "Pre ženy", bookioUrl: "https://services.bookio.com/n1-pro-aesthetic/widget?lang=sk", isPopular: true },
+          { id: "laser-balicek-nohy-bikiny", name: "Celé nohy + bikiny", description: "Kompletné ošetrenie nôh s bikínovou líniou.", duration: "1h 30min", price: "198 € (pôvodne 248 €)", benefits: ["20% zľava", "Kompletné ošetrenie", "Výhodná kombinácia"], targetGroup: "Pre ženy", bookioUrl: "https://services.bookio.com/n1-pro-aesthetic/widget?lang=sk" },
+          { id: "laser-balicek-nohy-bikiny-podpazusie", name: "Celé nohy + bikiny + podpazušie", description: "Najpopulárnejší kompletný balíček pre ženy.", duration: "1h 45min", price: "238 € (pôvodne 297 €)", benefits: ["20% zľava", "Kompletná starostlivosť", "Najvýhodnejšia kombinácia"], targetGroup: "Pre ženy", bookioUrl: "https://services.bookio.com/n1-pro-aesthetic/widget?lang=sk", isPopular: true },
+          { id: "laser-balicek-tvar-sija", name: "Celá tvár + šija", description: "Kompletné ošetrenie tváre vrátane šije.", duration: "1h 30min", price: "79 € (pôvodne 99 €)", benefits: ["20% zľava", "Kompletné ošetrenie tváre", "Dlhodobý efekt"], targetGroup: "Pre ženy aj mužov", bookioUrl: "https://services.bookio.com/n1-pro-aesthetic/widget?lang=sk" },
+          { id: "laser-balicek-hrud-chrbat", name: "Hruď + celý chrbát", description: "Kompletné ošetrenie hornej časti tela pre mužov.", duration: "1h 30min", price: "220 € (pôvodne 275 €)", benefits: ["20% zľava", "Kompletné ošetrenie", "Výhodná kombinácia"], targetGroup: "Pre mužov", bookioUrl: "https://services.bookio.com/n1-pro-aesthetic/widget?lang=sk" },
+          { id: "laser-balicek-bikiny-intim-podpazusie", name: "Bikiny + full intim + podpazušie", description: "Kompletný intímny balíček s podpazuším.", duration: "1h", price: "142 € (pôvodne 178 €)", benefits: ["20% zľava", "Kompletné ošetrenie", "Tri zóny"], targetGroup: "Pre ženy", bookioUrl: "https://services.bookio.com/n1-pro-aesthetic/widget?lang=sk" },
+          { id: "laser-balicek-ruky-podpazusie", name: "Celé ruky + podpazušie", description: "Kompletné ošetrenie rúk vrátane podpazušia.", duration: "45min", price: "110 € (pôvodne 138 €)", benefits: ["20% zľava", "Kompletné ošetrenie rúk", "Výhodná kombinácia"], targetGroup: "Pre ženy aj mužov", bookioUrl: "https://services.bookio.com/n1-pro-aesthetic/widget?lang=sk" }
+        ]
       }
     ]
   },
