@@ -1049,6 +1049,57 @@ export const servicesData: Category[] = [
             benefits: ["Celková detoxikácia", "Modelácia postavy", "Redukcia celulitídy"],
             targetGroup: "Pre komplexnú starostlivosť o postavu",
             bookioUrl: "https://services.bookio.com/n1-pro-aesthetic/widget?lang=sk"
+          },
+          {
+            id: "brazilska-maderoterapia",
+            name: "Brazílska maderoterapia – formovanie postavy",
+            description: "Intenzívna technika zameraná na viditeľnú modeláciu postavy. Kombinuje hlboké drevené valčeky a tvarovacie nástroje pre rozrušenie tukových usadenín.",
+            duration: "1h",
+            price: "50 €",
+            benefits: ["Viditeľná modelácia", "Rozrušenie tukových usadenín", "Aktivácia lymfy", "Spevnenie pokožky"],
+            targetGroup: "Pre celulitídu, ochabnutú kožu, formovanie brucha, bokov, zadku a stehien",
+            bookioUrl: "https://services.bookio.com/n1-pro-aesthetic/widget?lang=sk",
+            isPopular: true
+          },
+          {
+            id: "maderoterapia-basic",
+            name: "Maderoterapia Basic",
+            description: "Komplexná detoxikačná terapia pre aktiváciu lymfatického systému, redukciu celulitídy a celkovú relaxáciu.",
+            duration: "1h",
+            price: "30 €",
+            benefits: ["Aktivácia lymfy", "Odstraňovanie toxínov", "Zlepšenie prekrvenia", "Pocit ľahkých nôh"],
+            targetGroup: "Pre detoxikáciu a relaxáciu",
+            bookioUrl: "https://services.bookio.com/n1-pro-aesthetic/widget?lang=sk"
+          },
+          {
+            id: "maderoterapia-fit",
+            name: "Maderoterapia Fit",
+            description: "Moderné spojenie drevenej masáže a aktívneho cvičenia. Striedajú sa masážne techniky so svalovou stimuláciou.",
+            duration: "1h",
+            price: "30 €",
+            benefits: ["Formovanie postavy", "Spaľovanie tukov", "Efekt proti celulitíde", "Svalová stimulácia"],
+            targetGroup: "Pre aktívne formovanie postavy",
+            bookioUrl: "https://services.bookio.com/n1-pro-aesthetic/widget?lang=sk"
+          },
+          {
+            id: "maderoterapia-gold",
+            name: "Maderoterapia Gold – tvár, dekolt, dolné končatiny",
+            description: "Luxusná kombinácia jemných drevených nástrojov pre tvár a intenzívnej telesnej maderoterapie.",
+            duration: "1h 30min",
+            price: "50 €",
+            benefits: ["Redukcia opuchov tváre", "Zjemnenie vrások", "Podpora mikrocirkulácie", "Detoxikácia tela"],
+            targetGroup: "Pre komplexnú starostlivosť o tvár a telo",
+            bookioUrl: "https://services.bookio.com/n1-pro-aesthetic/widget?lang=sk"
+          },
+          {
+            id: "maderoterapia-platinum",
+            name: "Maderoterapia Platinum – tvár, dekolt, celé telo",
+            description: "Komplexná celotelová terapia pre maximálnu regeneráciu. Spája estetické účinky na tvár (lifting, rozjasnenie) a hlboké formovanie celého tela.",
+            duration: "2h",
+            price: "80 €",
+            benefits: ["Lifting tváre", "Rozjasnenie", "Anti-aging", "Hlboké formovanie tela"],
+            targetGroup: "Pre maximálnu regeneráciu a formovanie",
+            bookioUrl: "https://services.bookio.com/n1-pro-aesthetic/widget?lang=sk"
           }
         ]
       },
