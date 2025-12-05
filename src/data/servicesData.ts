@@ -488,6 +488,17 @@ export const servicesData: Category[] = [
             benefits: ["Tlmenie nevoľnosti", "Podpora motility žalúdka", "Úľava od plnosti"],
             targetGroup: "Pre osoby s gastrointestinálnymi ťažkosťami",
             bookioUrl: "https://services.bookio.com/n1-pro-aesthetic/widget?lang=sk"
+          },
+          {
+            id: "uric-acid-balance",
+            name: "Uric Acid Balance infúzia",
+            description: "Podpora pri zvýšenej hladine kyseliny močovej, bolestiach kĺbov a zápaloch. Podporuje obličky pri vylučovaní kyseliny močovej.",
+            duration: "1h",
+            price: "85 €",
+            benefits: ["Podpora obličiek", "Zníženie zápalov", "Úľava od bolestí kĺbov", "Detoxikácia"],
+            targetGroup: "Pre osoby s dnou a zvýšenou kyselinou močovou",
+            contraindications: ["Akútne infekcie s vysokou horúčkou", "Závažné ochorenia obličiek"],
+            bookioUrl: "https://services.bookio.com/n1-pro-aesthetic/widget?lang=sk"
           }
         ]
       }
