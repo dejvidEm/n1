@@ -578,10 +578,66 @@ export const servicesData: Category[] = [
             name: "Kolagénová terapia – Elastic Boost",
             description: "Cielené spevnenie, lifting a obnova pružnosti pleti.",
             duration: "1h",
-            price: "individuálna",
+            price: "54 €",
             benefits: ["Spevnenie", "Lifting", "Obnova pružnosti"],
             targetGroup: "Pre osoby 30+ so stratou elasticity",
             bookioUrl: "https://services.bookio.com/n1-pro-aesthetic/widget?lang=sk"
+          },
+          {
+            id: "biorepeel",
+            name: "BioRePeelCl3 – biologický revitalizačný peeling",
+            description: "Komplexná regenerácia bez lúpania, vhodná aj pre citlivú a aknóznu pleť. Inovatívny dvojfázový biostimulačný TCA peeling.",
+            duration: "40min",
+            price: "90 €",
+            benefits: ["Zlepšenie textúry pokožky", "Redukcia akné", "Rozjasnenie pleti", "Stimulácia bunkovej obnovy"],
+            targetGroup: "Pre všetky typy pleti vrátane citlivej a aknóznej",
+            contraindications: ["Aktívny herpes", "Otvorené rany", "Zápalové ložiská"],
+            bookioUrl: "https://services.bookio.com/n1-pro-aesthetic/widget?lang=sk"
+          },
+          {
+            id: "lux-skin-ritual",
+            name: "Lux Skin Ritual – kompletná výživná kúra",
+            description: "Komplexná regeneračná starostlivosť pre všetky typy pleti. Luxusné ošetrenie kombinujúce enzymatický peeling, sérum, masáž a výživnú masku.",
+            duration: "1h 30min",
+            price: "65 €",
+            benefits: ["Hĺbková regenerácia", "Rozžiarenie pleti", "Výživa", "Relaxácia"],
+            targetGroup: "Pre unavenú, dehydratovanú a mdlú pleť",
+            contraindications: ["Akútne kožné ochorenia", "Aktívny herpes", "Čerstvé spálenie od slnka"],
+            bookioUrl: "https://services.bookio.com/n1-pro-aesthetic/widget?lang=sk"
+          },
+          {
+            id: "neinvazivna-mezoterapia",
+            name: "Neinvazívna mezoterapia",
+            description: "Revitalizácia, hydratácia a spevnenie bez ihiel pomocou elektroporácie alebo ultrazvuku.",
+            duration: "1h",
+            price: "25 €",
+            benefits: ["Hlboký prienik sér", "Hydratácia", "Zjemnenie jaziev a strií", "Vhodné aj na vlasovú pokožku"],
+            targetGroup: "Pre klientov preferujúcich maximálnu šetrnosť",
+            contraindications: ["Kardiostimulátor", "Kovové implantáty", "Epilepsia", "Tehotenstvo"],
+            bookioUrl: "https://services.bookio.com/n1-pro-aesthetic/widget?lang=sk"
+          },
+          {
+            id: "pdt-terapia",
+            name: "PDT terapia svetlom",
+            description: "Regenerácia kože pomocou terapeutického LED svetla. Červené svetlo urýchľuje hojenie, modré eliminuje baktérie, zelené zjednocuje tón.",
+            duration: "30min",
+            price: "15 €",
+            benefits: ["Zníženie zápalu", "Upokojenie pokožky", "Eliminácia baktérií", "Podpora tvorby kolagénu"],
+            targetGroup: "Pre akné, citlivú pleť, rozšírené póry",
+            contraindications: ["Fotosenzitivita", "Lieky spôsobujúce citlivosť na svetlo", "Epilepsia"],
+            bookioUrl: "https://services.bookio.com/n1-pro-aesthetic/widget?lang=sk"
+          },
+          {
+            id: "radiofrekvencia",
+            name: "Rádiofrekvencia / Tripolárna rádiofrekvencia",
+            description: "Neinvazívny lifting a spevnenie kože cez tepelnú remodeláciu. Okamžité stiahnutie kolagénových vlákien s dlhodobým efektom.",
+            duration: "1h",
+            price: "35 €",
+            benefits: ["Okamžité vypnutie pleti", "Stimulácia kolagénu", "Redukcia vrások", "Spevnenie kontúr"],
+            targetGroup: "Pre ochabnutú pleť, vrásky, stratu elasticity",
+            contraindications: ["Tehotenstvo", "Kovové implantáty", "Kardiostimulátor", "Akútna rosacea"],
+            bookioUrl: "https://services.bookio.com/n1-pro-aesthetic/widget?lang=sk",
+            isPopular: true
           }
         ]
       },
