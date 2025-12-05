@@ -5,12 +5,11 @@ import { Button } from "@/components/ui/button";
 import logo from "@/assets/logo.png";
 
 const navigation = [
-  { name: "Domov", href: "/" },
-  { name: "O nás", href: "/o-nas" },
-  { name: "Služby", href: "/sluzby" },
-  { name: "Cenník", href: "/cennik" },
-  { name: "Rezervácia", href: "/rezervacia" },
-  { name: "Kontakt", href: "/kontakt" },
+  { name: "Domov", href: "/", external: false },
+  { name: "O nás", href: "/o-nas", external: false },
+  { name: "Služby", href: "/sluzby", external: false },
+  { name: "Rezervácia", href: "https://services.bookio.com/n1-pro-aesthetic/widget?lang=sk", external: true },
+  { name: "Kontakt", href: "/kontakt", external: false },
 ];
 
 export const Header = () => {
@@ -38,13 +37,25 @@ export const Header = () => {
         
         <div className="hidden lg:flex lg:gap-x-8">
           {navigation.map((item) => (
-            <Link
-              key={item.name}
-              to={item.href}
-              className="text-sm font-medium leading-6 text-foreground hover:text-accent transition-colors"
-            >
-              {item.name}
-            </Link>
+            item.external ? (
+              <a
+                key={item.name}
+                href={item.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm font-medium leading-6 text-foreground hover:text-accent transition-colors"
+              >
+                {item.name}
+              </a>
+            ) : (
+              <Link
+                key={item.name}
+                to={item.href}
+                className="text-sm font-medium leading-6 text-foreground hover:text-accent transition-colors"
+              >
+                {item.name}
+              </Link>
+            )
           ))}
         </div>
         
@@ -79,14 +90,27 @@ export const Header = () => {
               <div className="-my-6 divide-y divide-border">
                 <div className="space-y-2 py-6">
                   {navigation.map((item) => (
-                    <Link
-                      key={item.name}
-                      to={item.href}
-                      className="-mx-3 block rounded-lg px-3 py-2 text-base font-medium leading-7 text-foreground hover:bg-secondary"
-                      onClick={() => setMobileMenuOpen(false)}
-                    >
-                      {item.name}
-                    </Link>
+                    item.external ? (
+                      <a
+                        key={item.name}
+                        href={item.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="-mx-3 block rounded-lg px-3 py-2 text-base font-medium leading-7 text-foreground hover:bg-secondary"
+                        onClick={() => setMobileMenuOpen(false)}
+                      >
+                        {item.name}
+                      </a>
+                    ) : (
+                      <Link
+                        key={item.name}
+                        to={item.href}
+                        className="-mx-3 block rounded-lg px-3 py-2 text-base font-medium leading-7 text-foreground hover:bg-secondary"
+                        onClick={() => setMobileMenuOpen(false)}
+                      >
+                        {item.name}
+                      </Link>
+                    )
                   ))}
                 </div>
                 <div className="py-6">

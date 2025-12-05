@@ -25,8 +25,7 @@ export const Footer = () => {
               <li><Link to="/" className="text-muted-foreground hover:text-accent transition-colors">Domov</Link></li>
               <li><Link to="/o-nas" className="text-muted-foreground hover:text-accent transition-colors">O nás</Link></li>
               <li><Link to="/sluzby" className="text-muted-foreground hover:text-accent transition-colors">Služby</Link></li>
-              <li><Link to="/cennik" className="text-muted-foreground hover:text-accent transition-colors">Cenník</Link></li>
-              <li><Link to="/rezervacia" className="text-muted-foreground hover:text-accent transition-colors">Rezervácia</Link></li>
+              <li><a href="https://services.bookio.com/n1-pro-aesthetic/widget?lang=sk" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-accent transition-colors">Rezervácia</a></li>
               <li><Link to="/kontakt" className="text-muted-foreground hover:text-accent transition-colors">Kontakt</Link></li>
             </ul>
           </div>
