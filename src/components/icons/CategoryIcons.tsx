@@ -88,3 +88,15 @@ export const WellnessIcon = ({ className, ...props }: IconProps) => (
     <path d="M28 44l4 8 4-8" />
   </svg>
 );
+
+export const CoursesIcon = ({ className, ...props }: IconProps) => (
+  <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="1.2" className={className} {...props}>
+    {/* Graduation cap / certificate icon */}
+    <path d="M8 24l24-12 24 12-24 12-24-12z" />
+    <path d="M16 28v12c0 4 7 8 16 8s16-4 16-8V28" />
+    <path d="M32 36v16" />
+    <circle cx="32" cy="54" r="2" />
+    <path d="M52 24v16" />
+    <path d="M50 42h4l-2 4-2-4z" />
+  </svg>
+);

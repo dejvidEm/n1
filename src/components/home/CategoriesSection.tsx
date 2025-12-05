@@ -9,7 +9,8 @@ import {
   BodyTreatmentIcon,
   HairCareIcon,
   PedicureIcon,
-  WellnessIcon
+  WellnessIcon,
+  CoursesIcon
 } from "@/components/icons/CategoryIcons";
 
 const categories = [
@@ -60,6 +61,12 @@ const categories = [
     title: "Wellness procedúry",
     subtitle: "Relaxácia & Masáže",
     href: "/sluzby?category=wellness"
+  },
+  {
+    Icon: CoursesIcon,
+    title: "Kurzy",
+    subtitle: "Medzinárodný certifikát",
+    href: "/sluzby?category=kurzy"
   }
 ];
 
