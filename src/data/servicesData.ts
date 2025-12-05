@@ -313,7 +313,7 @@ export const servicesData: Category[] = [
             name: "PRX-T33 – biorevitalizačný peeling",
             description: "Inovatívny peeling s okamžitým omladením a liftingom bez odlupovania.",
             duration: "45min",
-            price: "80 €",
+            price: "90 €",
             benefits: ["Okamžitý lifting", "Bez odlupovania", "Stimulácia kolagénu"],
             targetGroup: "Pre osoby hľadajúce rýchle výsledky bez rekonvalescencie",
             contraindications: ["Aktívne akné a zápal", "Tmavý fototyp", "Čerstvé opálenie", "Tehotenstvo"],
@@ -352,7 +352,7 @@ export const servicesData: Category[] = [
             name: "Vitamin Recharge infúzia",
             description: "Okamžitá energizácia, podpora imunity a zdravý vzhľad pokožky, vlasov a nechtov.",
             duration: "1h",
-            price: "individuálna",
+            price: "30 €",
             benefits: ["Okamžitá energia", "Podpora imunity", "Zdravý vzhľad"],
             targetGroup: "Pre osoby s únavou a deficitom vitamínov",
             bookioUrl: "https://services.bookio.com/n1-pro-aesthetic/widget?lang=sk"
