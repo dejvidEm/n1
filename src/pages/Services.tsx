@@ -1,11 +1,5 @@
-import { useState, useEffect } from "react";
-import { useSearchParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Layout } from "@/components/layout/Layout";
-import { servicesData } from "@/data/servicesData";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { Clock, Users, AlertTriangle, ArrowRight, ChevronDown } from "lucide-react";
-import { cn } from "@/lib/utils";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import {
   AestheticMedicineIcon,
@@ -77,36 +71,7 @@ const categories = [
 ];
 
 const Services = () => {
-  const [searchParams, setSearchParams] = useSearchParams();
-  const categoryFromUrl = searchParams.get("category");
-  
-  const initialCategory = categoryFromUrl && servicesData.find(c => c.id === categoryFromUrl)
-    ? categoryFromUrl
-    : servicesData[0].id;
-    
-  const [selectedCategory, setSelectedCategory] = useState(initialCategory);
-  const [expandedSubcategory, setExpandedSubcategory] = useState<string | null>(
-    servicesData.find(c => c.id === initialCategory)?.subcategories?.[0]?.id || null
-  );
-  
   const { ref: gridRef, isVisible: gridVisible } = useScrollAnimation({ threshold: 0.1 });
-
-  // Handle URL changes
-  useEffect(() => {
-    if (categoryFromUrl && servicesData.find(c => c.id === categoryFromUrl)) {
-      setSelectedCategory(categoryFromUrl);
-      const category = servicesData.find(c => c.id === categoryFromUrl);
-      setExpandedSubcategory(category?.subcategories?.[0]?.id || null);
-    }
-  }, [categoryFromUrl]);
-
-  const handleCategoryChange = (categoryId: string) => {
-    setSelectedCategory(categoryId);
-    setExpandedSubcategory(servicesData.find(c => c.id === categoryId)?.subcategories?.[0]?.id || null);
-    setSearchParams({ category: categoryId });
-  };
-
-  const currentCategory = servicesData.find(c => c.id === selectedCategory);
 
   return (
     <Layout>
@@ -143,15 +108,10 @@ const Services = () => {
             {categories.map((category, index) => {
               const { Icon } = category;
               return (
-                <button 
+                <Link 
                   key={category.id} 
-                  onClick={() => handleCategoryChange(category.id)}
-                  className={cn(
-                    "group relative p-8 md:p-10 text-center border-b border-r border-border/50 last:border-r-0 [&:nth-child(4n)]:border-r-0 [&:nth-child(n+5)]:md:border-b-0 [&:nth-child(n+7)]:border-b-0 transition-all duration-500",
-                    selectedCategory === category.id 
-                      ? "bg-accent/10" 
-                      : "hover:bg-secondary/20"
-                  )}
+                  to={`/sluzby/${category.id}`}
+                  className="group relative p-8 md:p-10 text-center border-b border-r border-border/50 last:border-r-0 [&:nth-child(4n)]:border-r-0 [&:nth-child(n+5)]:md:border-b-0 [&:nth-child(n+7)]:border-b-0 hover:bg-secondary/20 transition-all duration-500"
                   style={{
                     opacity: gridVisible ? 1 : 0,
                     transform: gridVisible ? "translateY(0)" : "translateY(20px)",
@@ -159,17 +119,11 @@ const Services = () => {
                   }}
                 >
                   {/* Line-art icon */}
-                  <div className={cn(
-                    "inline-flex items-center justify-center w-16 h-16 mb-6 transition-transform duration-300",
-                    selectedCategory === category.id ? "text-accent scale-110" : "text-accent group-hover:scale-110"
-                  )}>
+                  <div className="inline-flex items-center justify-center w-16 h-16 mb-6 text-accent group-hover:scale-110 transition-transform duration-300">
                     <Icon className="w-full h-full" />
                   </div>
                   
-                  <h3 className={cn(
-                    "text-sm md:text-base font-display font-medium tracking-wide uppercase mb-2 transition-colors",
-                    selectedCategory === category.id ? "text-accent" : "group-hover:text-accent"
-                  )}>
+                  <h3 className="text-sm md:text-base font-display font-medium tracking-wide uppercase mb-2 group-hover:text-accent transition-colors">
                     {category.title}
                   </h3>
                   
@@ -177,12 +131,9 @@ const Services = () => {
                     {category.subtitle}
                   </p>
                   
-                  {/* Active/Hover indicator */}
-                  <div className={cn(
-                    "absolute bottom-4 left-1/2 -translate-x-1/2 h-px bg-accent transition-all duration-300",
-                    selectedCategory === category.id ? "w-12" : "w-0 group-hover:w-12"
-                  )}></div>
-                </button>
+                  {/* Hover indicator */}
+                  <div className="absolute bottom-4 left-1/2 -translate-x-1/2 w-0 h-px bg-accent group-hover:w-12 transition-all duration-300"></div>
+                </Link>
               );
             })}
           </div>
