@@ -116,10 +116,11 @@ const ServiceCategory = () => {
                     <div className="border border-t-0 border-border">
                       {subcategory.services.length > 0 ? (
                         subcategory.services.map((service, index) => (
-                          <div
+                          <Link
                             key={service.id}
+                            to={`/sluzby/${category.id}/${service.id}`}
                             className={cn(
-                              "p-6 hover:bg-secondary/20 transition-colors",
+                              "block p-6 hover:bg-secondary/20 transition-colors",
                               index !== subcategory.services.length - 1 && "border-b border-border"
                             )}
                           >
@@ -152,32 +153,19 @@ const ServiceCategory = () => {
                                     {service.targetGroup}
                                   </span>
                                 </div>
-
-                                {service.contraindications && service.contraindications.length > 0 && (
-                                  <div className="mt-3 flex items-start gap-2 text-xs text-muted-foreground">
-                                    <AlertTriangle className="h-3 w-3 mt-0.5 flex-shrink-0" />
-                                    <span>Kontraindikácie: {service.contraindications.join(", ")}</span>
-                                  </div>
-                                )}
                               </div>
 
                               <div className="flex items-center gap-4 lg:flex-col lg:items-end">
                                 <span className="text-lg font-display font-medium text-accent">
                                   {service.price}
                                 </span>
-                                <Button
-                                  size="sm"
-                                  asChild
-                                  className="bg-accent hover:bg-accent/90 text-accent-foreground text-xs uppercase tracking-wider"
-                                >
-                                  <a href={service.bookioUrl} target="_blank" rel="noopener noreferrer">
-                                    Rezervovať
-                                    <ArrowRight className="ml-2 h-3 w-3" />
-                                  </a>
-                                </Button>
+                                <span className="text-sm text-accent flex items-center gap-1">
+                                  Viac info
+                                  <ArrowRight className="h-3 w-3" />
+                                </span>
                               </div>
                             </div>
-                          </div>
+                          </Link>
                         ))
                       ) : (
                         <div className="p-8 text-center text-muted-foreground">
