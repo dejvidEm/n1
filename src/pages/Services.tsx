@@ -19,17 +19,62 @@ import {
   CoursesIcon
 } from "@/components/icons/CategoryIcons";
 
-const categoryIcons: Record<string, React.ComponentType<{ className?: string }>> = {
-  "esteticka-medicina": AestheticMedicineIcon,
-  "kozmetologia": CosmetologyIcon,
-  "laserove-odstranenie": LaserIcon,
-  "permanentny-makeup": PermanentMakeupIcon,
-  "telove-osetrenia": BodyTreatmentIcon,
-  "vlasy": HairCareIcon,
-  "pedikura": PedicureIcon,
-  "wellness": WellnessIcon,
-  "kurzy": CoursesIcon
-};
+const categories = [
+  {
+    id: "esteticka-medicina",
+    Icon: AestheticMedicineIcon,
+    title: "Estetická medicína",
+    subtitle: "Regeneratívna terapia"
+  },
+  {
+    id: "kozmetologia",
+    Icon: CosmetologyIcon,
+    title: "Kozmetológia",
+    subtitle: "Profesionálna starostlivosť"
+  },
+  {
+    id: "laserove-odstranenie",
+    Icon: LaserIcon,
+    title: "Laserová epilácia",
+    subtitle: "ELISION PRO"
+  },
+  {
+    id: "permanentny-makeup",
+    Icon: PermanentMakeupIcon,
+    title: "Permanentný make-up",
+    subtitle: "Mikropigmentácia"
+  },
+  {
+    id: "telove-osetrenia",
+    Icon: BodyTreatmentIcon,
+    title: "Telové ošetrenia",
+    subtitle: "Maderoterapia & Depilácia"
+  },
+  {
+    id: "vlasy",
+    Icon: HairCareIcon,
+    title: "Vlasová starostlivosť",
+    subtitle: "Head Spa & Trichológia"
+  },
+  {
+    id: "pedikura",
+    Icon: PedicureIcon,
+    title: "Pedikúra",
+    subtitle: "Starostlivosť o nohy"
+  },
+  {
+    id: "wellness",
+    Icon: WellnessIcon,
+    title: "Wellness procedúry",
+    subtitle: "Relaxácia & Masáže"
+  },
+  {
+    id: "kurzy",
+    Icon: CoursesIcon,
+    title: "Kurzy",
+    subtitle: "Medzinárodný certifikát"
+  }
+];
 
 const Services = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -95,8 +140,8 @@ const Services = () => {
             ref={gridRef}
             className="grid grid-cols-2 md:grid-cols-4 max-w-5xl mx-auto"
           >
-            {servicesData.map((category, index) => {
-              const Icon = categoryIcons[category.id] || AestheticMedicineIcon;
+            {categories.map((category, index) => {
+              const { Icon } = category;
               return (
                 <button 
                   key={category.id} 
@@ -125,11 +170,11 @@ const Services = () => {
                     "text-sm md:text-base font-display font-medium tracking-wide uppercase mb-2 transition-colors",
                     selectedCategory === category.id ? "text-accent" : "group-hover:text-accent"
                   )}>
-                    {category.name}
+                    {category.title}
                   </h3>
                   
                   <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
-                    {category.description?.slice(0, 30)}...
+                    {category.subtitle}
                   </p>
                   
                   {/* Active/Hover indicator */}
