@@ -6,6 +6,30 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Clock, Users, AlertTriangle, ArrowRight, ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import {
+  AestheticMedicineIcon,
+  CosmetologyIcon,
+  LaserIcon,
+  PermanentMakeupIcon,
+  BodyTreatmentIcon,
+  HairCareIcon,
+  PedicureIcon,
+  WellnessIcon,
+  CoursesIcon
+} from "@/components/icons/CategoryIcons";
+
+const categoryIcons: Record<string, React.ComponentType<{ className?: string }>> = {
+  "esteticka-medicina": AestheticMedicineIcon,
+  "kozmetologia": CosmetologyIcon,
+  "laserove-odstranenie": LaserIcon,
+  "permanentny-makeup": PermanentMakeupIcon,
+  "telove-osetrenia": BodyTreatmentIcon,
+  "vlasy": HairCareIcon,
+  "pedikura": PedicureIcon,
+  "wellness": WellnessIcon,
+  "kurzy": CoursesIcon
+};
 
 const Services = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -19,6 +43,8 @@ const Services = () => {
   const [expandedSubcategory, setExpandedSubcategory] = useState<string | null>(
     servicesData.find(c => c.id === initialCategory)?.subcategories?.[0]?.id || null
   );
+  
+  const { ref: gridRef, isVisible: gridVisible } = useScrollAnimation({ threshold: 0.1 });
 
   // Handle URL changes
   useEffect(() => {
@@ -43,6 +69,11 @@ const Services = () => {
       <section className="py-20 md:py-28 bg-secondary/30">
         <div className="container mx-auto px-6">
           <div className="max-w-3xl mx-auto text-center">
+            <div className="flex items-center justify-center gap-3 mb-6">
+              <div className="w-8 h-px bg-accent/60"></div>
+              <div className="w-1.5 h-1.5 rotate-45 bg-accent/60"></div>
+              <div className="w-8 h-px bg-accent/60"></div>
+            </div>
             <p className="text-sm uppercase tracking-[0.3em] text-accent mb-4">
               Výber procedúr
             </p>
@@ -57,27 +88,62 @@ const Services = () => {
         </div>
       </section>
 
-      {/* Category Navigation */}
-      <section className="py-8 border-b border-border sticky top-16 bg-background z-40">
+      {/* Categories Grid */}
+      <section className="py-16 md:py-20 bg-background">
         <div className="container mx-auto px-6">
-          <div className="flex flex-wrap justify-center gap-2">
-            {servicesData.map((category) => (
-              <button
-                key={category.id}
-                onClick={() => handleCategoryChange(category.id)}
-                className={cn(
-                  "px-4 py-2 text-sm uppercase tracking-[0.1em] transition-all duration-300 border",
-                  selectedCategory === category.id
-                    ? "bg-accent text-accent-foreground border-accent"
-                    : "bg-transparent text-muted-foreground border-border hover:border-accent hover:text-accent"
-                )}
-              >
-                {category.name}
-              </button>
-            ))}
+          <div 
+            ref={gridRef}
+            className="grid grid-cols-2 md:grid-cols-4 max-w-5xl mx-auto"
+          >
+            {servicesData.map((category, index) => {
+              const Icon = categoryIcons[category.id] || AestheticMedicineIcon;
+              return (
+                <button 
+                  key={category.id} 
+                  onClick={() => handleCategoryChange(category.id)}
+                  className={cn(
+                    "group relative p-8 md:p-10 text-center border-b border-r border-border/50 last:border-r-0 [&:nth-child(4n)]:border-r-0 [&:nth-child(n+5)]:md:border-b-0 [&:nth-child(n+7)]:border-b-0 transition-all duration-500",
+                    selectedCategory === category.id 
+                      ? "bg-accent/10" 
+                      : "hover:bg-secondary/20"
+                  )}
+                  style={{
+                    opacity: gridVisible ? 1 : 0,
+                    transform: gridVisible ? "translateY(0)" : "translateY(20px)",
+                    transition: `all 0.5s ease-out ${index * 75}ms`
+                  }}
+                >
+                  {/* Line-art icon */}
+                  <div className={cn(
+                    "inline-flex items-center justify-center w-16 h-16 mb-6 transition-transform duration-300",
+                    selectedCategory === category.id ? "text-accent scale-110" : "text-accent group-hover:scale-110"
+                  )}>
+                    <Icon className="w-full h-full" />
+                  </div>
+                  
+                  <h3 className={cn(
+                    "text-sm md:text-base font-display font-medium tracking-wide uppercase mb-2 transition-colors",
+                    selectedCategory === category.id ? "text-accent" : "group-hover:text-accent"
+                  )}>
+                    {category.name}
+                  </h3>
+                  
+                  <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
+                    {category.description?.slice(0, 30)}...
+                  </p>
+                  
+                  {/* Active/Hover indicator */}
+                  <div className={cn(
+                    "absolute bottom-4 left-1/2 -translate-x-1/2 h-px bg-accent transition-all duration-300",
+                    selectedCategory === category.id ? "w-12" : "w-0 group-hover:w-12"
+                  )}></div>
+                </button>
+              );
+            })}
           </div>
         </div>
       </section>
+
 
       {/* Services Content */}
       <section className="py-16 md:py-24 bg-background">
