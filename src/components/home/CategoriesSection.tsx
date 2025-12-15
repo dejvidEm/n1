@@ -18,55 +18,55 @@ const categories = [
     Icon: AestheticMedicineIcon,
     title: "Estetická medicína",
     subtitle: "Regeneratívna terapia",
-    href: "/sluzby?category=esteticka-medicina"
+    href: "/sluzby/esteticka-medicina"
   },
   {
     Icon: CosmetologyIcon,
     title: "Kozmetológia",
     subtitle: "Profesionálna starostlivosť",
-    href: "/sluzby?category=kozmetologia"
+    href: "/sluzby/kozmetologia"
   },
   {
     Icon: LaserIcon,
     title: "Laserová epilácia",
     subtitle: "ELISION PRO",
-    href: "/sluzby?category=laserove-odstranenie"
+    href: "/sluzby/laserove-odstranenie"
   },
   {
     Icon: PermanentMakeupIcon,
     title: "Permanentný make-up",
     subtitle: "Mikropigmentácia",
-    href: "/sluzby?category=permanentny-makeup"
+    href: "/sluzby/permanentny-makeup"
   },
   {
     Icon: BodyTreatmentIcon,
     title: "Telové ošetrenia",
     subtitle: "Maderoterapia & Depilácia",
-    href: "/sluzby?category=telove-osetrenia"
+    href: "/sluzby/telove-osetrenia"
   },
   {
     Icon: HairCareIcon,
     title: "Vlasová starostlivosť",
     subtitle: "Head Spa & Trichológia",
-    href: "/sluzby?category=vlasy"
+    href: "/sluzby/vlasy"
   },
   {
     Icon: PedicureIcon,
     title: "Pedikúra",
     subtitle: "Starostlivosť o nohy",
-    href: "/sluzby?category=pedikura"
+    href: "/sluzby/pedikura"
   },
   {
     Icon: WellnessIcon,
     title: "Wellness procedúry",
     subtitle: "Relaxácia & Masáže",
-    href: "/sluzby?category=wellness"
+    href: "/sluzby/wellness"
   },
   {
     Icon: CoursesIcon,
     title: "Kurzy",
     subtitle: "Medzinárodný certifikát",
-    href: "/sluzby?category=kurzy"
+    href: "/sluzby/kurzy"
   }
 ];
 
