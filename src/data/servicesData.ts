@@ -3,7 +3,7 @@ import { Category } from "@/types/services";
 export const servicesData: Category[] = [
   {
     id: "esteticka-medicina",
-    name: "Estetická a regeneratívna medicína",
+    name: "Estetická medicína",
     description: "Moderná estetická medicína využívajúca najnovšie technológie pre omladenie, regeneráciu a obnovu pokožky.",
     subcategories: [
       {
@@ -47,13 +47,50 @@ export const servicesData: Category[] = [
         name: "Botulotoxín",
         description: "Vyhladenie mimických vrások a úprava kontúr pomocou botulotoxínu.",
         services: []
+      },
+      {
+        id: "infuzie",
+        name: "Infúzna terapia",
+        description: "Regenerácia organizmu prostredníctvom intravenózneho podávania vitamínov, minerálov a antioxidantov.",
+        services: []
+      }
+    ]
+  },
+  {
+    id: "kozmetologia",
+    name: "Kozmetológia",
+    description: "Profesionálna kozmetická starostlivosť o pleť s použitím najmodernejších techník a produktov.",
+    subcategories: [
+      {
+        id: "cistiace-osetrenia",
+        name: "Čistiace ošetrenia",
+        description: "Hĺbkové čistenie a detoxikácia pleti.",
+        services: []
+      },
+      {
+        id: "anti-aging",
+        name: "Anti-aging ošetrenia",
+        description: "Omladzujúce procedúry pre redukciu vrások a spevnenie pleti.",
+        services: []
+      },
+      {
+        id: "specialne-osetrenia",
+        name: "Špeciálne ošetrenia",
+        description: "Cielené riešenia pre špecifické potreby pokožky.",
+        services: []
+      },
+      {
+        id: "pristrojove-osetrenia",
+        name: "Prístrojové ošetrenia pleti",
+        description: "Pokročilé technológie pre komplexnú starostlivosť o pokožku.",
+        services: []
       }
     ]
   },
   {
     id: "laserove-odstranenie",
-    name: "Medicínske laserové odstránenie chĺpkov",
-    description: "Najúčinnejšia metóda trvalého odstránenia nežiaduceho ochlpenia pomocou medicínskeho dióového lasera.",
+    name: "Laserová epilácia",
+    description: "Najúčinnejšia metóda trvalého odstránenia nežiaduceho ochlpenia pomocou medicínskeho diódového lasera ELISION PRO.",
     subcategories: [
       {
         id: "laser-tvar",
@@ -88,64 +125,127 @@ export const servicesData: Category[] = [
     ]
   },
   {
-    id: "pristrojove-osetrenia",
-    name: "Prístrojové ošetrenia pleti",
-    description: "Pokročilé technológie pre komplexnú starostlivosť o pokožku.",
+    id: "permanentny-makeup",
+    name: "Permanentný make-up",
+    description: "Profesionálna mikropigmentácia pre prirodzené a dlhotrvajúce výsledky.",
     subcategories: [
       {
-        id: "lifting-osetrenia",
-        name: "Liftingové a spevňovacie ošetrenia",
-        description: "Moderné technológie pre spevnenie a lifting pokožky.",
+        id: "pmu-oboci",
+        name: "Obočie",
+        description: "Permanentný make-up obočia rôznymi technikami.",
         services: []
       },
       {
-        id: "pristroje-vseobecne",
-        name: "Prístrojová starostlivosť o pleť",
-        description: "Komplexné prístrojové ošetrenia pre rôzne potreby pleti.",
+        id: "pmu-pery",
+        name: "Pery",
+        description: "Permanentný make-up pier pre plnší a definovanejší vzhľad.",
         services: []
       },
+      {
+        id: "pmu-ocne-linky",
+        name: "Očné linky",
+        description: "Permanentný make-up očných liniek.",
+        services: []
+      }
+    ]
+  },
+  {
+    id: "telove-osetrenia",
+    name: "Telové ošetrenia",
+    description: "Komplexná starostlivosť o telo vrátane maderoterapie a depilácie.",
+    subcategories: [
       {
         id: "maderoterapia",
         name: "Maderoterapia",
         description: "Prírodná drevená masážna technika pre tvarovanie tela.",
         services: []
-      }
-    ]
-  },
-  {
-    id: "kozmetika",
-    name: "Profesionálna kozmetika",
-    description: "Komplexná starostlivosť o pleť s použitím profesionálnej kozmetiky.",
-    subcategories: [
+      },
       {
-        id: "cistiace-osetrenia",
-        name: "Čistiace ošetrenia",
-        description: "Hĺbkové čistenie a detoxikácia pleti.",
+        id: "depilacia",
+        name: "Depilácia",
+        description: "Klasická depilácia voskom a cukrovou pastou.",
         services: []
       },
       {
-        id: "anti-aging",
-        name: "Anti-aging ošetrenia",
-        description: "Omladzujúce procedúry pre redukciu vrások a spevnenie pleti.",
-        services: []
-      },
-      {
-        id: "specialne-osetrenia",
-        name: "Špeciálne ošetrenia",
-        description: "Cielené riešenia pre špecifické potreby pokožky.",
+        id: "lifting-telo",
+        name: "Liftingové a spevňovacie ošetrenia",
+        description: "Moderné technológie pre spevnenie a lifting pokožky tela.",
         services: []
       }
     ]
   },
   {
-    id: "infuzie",
-    name: "Infúzna terapia a wellness",
-    description: "Regenerácia organizmu prostredníctvom intravenózneho podávania vitamínov, minerálov a antioxidantov.",
+    id: "vlasy",
+    name: "Vlasová starostlivosť",
+    description: "Head Spa rituály a trichologické ošetrenia pre zdravé a krásne vlasy.",
     subcategories: [
       {
-        id: "vitaminske-infuzie",
-        name: "Vitamínové a regeneračné infúzie",
-        description: "Intenzívna dodávka vitamínov a živín priamo do krvného obehu.",
+        id: "head-spa",
+        name: "Head Spa",
+        description: "Relaxačné a regeneračné rituály pre pokožku hlavy a vlasy.",
+        services: []
+      },
+      {
+        id: "trichologia",
+        name: "Trichológia",
+        description: "Odborná starostlivosť o pokožku hlavy a vlasové problémy.",
+        services: []
+      }
+    ]
+  },
+  {
+    id: "pedikura",
+    name: "Pedikúra",
+    description: "Profesionálna starostlivosť o nohy a nechty.",
+    subcategories: [
+      {
+        id: "medicinska-pedikura",
+        name: "Medicínska pedikúra",
+        description: "Odborná starostlivosť o nohy s medicínskym prístupom.",
+        services: []
+      },
+      {
+        id: "estetická-pedikura",
+        name: "Estetická pedikúra",
+        description: "Kozmetická starostlivosť o nohy pre krásny vzhľad.",
+        services: []
+      }
+    ]
+  },
+  {
+    id: "wellness",
+    name: "Wellness procedúry",
+    description: "Relaxačné a regeneračné procedúry pre telo aj myseľ.",
+    subcategories: [
+      {
+        id: "masaze",
+        name: "Masáže",
+        description: "Rôzne typy masáží pre relaxáciu a regeneráciu.",
+        services: []
+      },
+      {
+        id: "relaxacia",
+        name: "Relaxačné procedúry",
+        description: "Wellness rituály pre oddych a regeneráciu.",
+        services: []
+      }
+    ]
+  },
+  {
+    id: "kurzy",
+    name: "Kurzy",
+    description: "Profesionálne vzdelávanie s medzinárodným certifikátom.",
+    subcategories: [
+      {
+        id: "kurzy-kozmetika",
+        name: "Kozmetické kurzy",
+        description: "Vzdelávacie programy v oblasti kozmetológie.",
+        services: []
+      },
+      {
+        id: "kurzy-laser",
+        name: "Laserové kurzy",
+        description: "Certifikované školenia pre prácu s laserom.",
         services: []
       }
     ]
