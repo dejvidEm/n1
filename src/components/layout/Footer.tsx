@@ -36,12 +36,12 @@ export const Footer = () => {
             <ul className="space-y-3 text-sm">
               <li className="flex items-start gap-2">
                 <MapPin className="h-4 w-4 mt-0.5 text-accent flex-shrink-0" />
-                <span className="text-muted-foreground">Vaša adresa, Mesto</span>
+                <span className="text-muted-foreground">Hviezdoslavova 3096/3, 945 01 Komárno</span>
               </li>
               <li className="flex items-center gap-2">
                 <Phone className="h-4 w-4 text-accent flex-shrink-0" />
-                <a href="tel:+421000000000" className="text-muted-foreground hover:text-accent transition-colors">
-                  +421 000 000 000
+                <a href="tel:+421918500282" className="text-muted-foreground hover:text-accent transition-colors">
+                  0918 500 282
                 </a>
               </li>
               <li className="flex items-center gap-2">
