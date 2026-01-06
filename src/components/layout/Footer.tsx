@@ -57,7 +57,7 @@ export const Footer = () => {
           <div>
             <h4 className="font-medium mb-4">Sledujte nás</h4>
             <div className="flex gap-4 mb-6">
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-accent transition-colors">
+              <a href="https://www.instagram.com/n1pro.aestheticclinic/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-accent transition-colors">
                 <Instagram className="h-5 w-5" />
               </a>
               <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-accent transition-colors">
