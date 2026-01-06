@@ -69,62 +69,68 @@ export const Header = () => {
       </nav>
 
       {/* Mobile menu */}
-      {mobileMenuOpen && (
-        <div className="lg:hidden fixed inset-0 z-50">
-          <div className="fixed inset-0 bg-primary/80" onClick={() => setMobileMenuOpen(false)} />
-          <div className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-background px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-border">
-            <div className="flex items-center justify-between">
-              <Link to="/" className="-m-1.5 p-1.5" onClick={() => setMobileMenuOpen(false)}>
-                <img src={logo} alt="N1 Pro Aesthetic Clinic" className="h-10 w-auto" />
-              </Link>
-              <Button
-                variant="ghost"
-                className="-m-2.5 rounded-md p-2.5"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                <span className="sr-only">Zavrieť menu</span>
-                <X className="h-6 w-6" aria-hidden="true" />
-              </Button>
-            </div>
-            <div className="mt-6 flow-root">
-              <div className="-my-6 divide-y divide-border">
-                <div className="space-y-2 py-6">
-                  {navigation.map((item) => (
-                    item.external ? (
-                      <a
-                        key={item.name}
-                        href={item.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="-mx-3 block rounded-lg px-3 py-2 text-base font-medium leading-7 text-foreground hover:bg-secondary"
-                        onClick={() => setMobileMenuOpen(false)}
-                      >
-                        {item.name}
-                      </a>
-                    ) : (
-                      <Link
-                        key={item.name}
-                        to={item.href}
-                        className="-mx-3 block rounded-lg px-3 py-2 text-base font-medium leading-7 text-foreground hover:bg-secondary"
-                        onClick={() => setMobileMenuOpen(false)}
-                      >
-                        {item.name}
-                      </Link>
-                    )
-                  ))}
-                </div>
-                <div className="py-6">
-                  <Button asChild className="w-full bg-accent hover:bg-accent/90 text-accent-foreground">
-                    <a href="https://services.bookio.com/n1-pro-aesthetic/widget?lang=sk" target="_blank" rel="noopener noreferrer">
-                      Rezervovať termín
+      <div 
+        className={`lg:hidden fixed inset-0 z-[100] transition-opacity duration-300 ${mobileMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}
+      >
+        <div 
+          className="absolute inset-0 bg-primary/80" 
+          onClick={() => setMobileMenuOpen(false)} 
+          aria-hidden="true"
+        />
+        <div 
+          className={`absolute inset-y-0 right-0 w-full overflow-y-auto bg-background px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-border transition-transform duration-300 ${mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}
+        >
+          <div className="flex items-center justify-between">
+            <Link to="/" className="-m-1.5 p-1.5" onClick={() => setMobileMenuOpen(false)}>
+              <img src={logo} alt="N1 Pro Aesthetic Clinic" className="h-10 w-auto" />
+            </Link>
+            <Button
+              variant="ghost"
+              className="-m-2.5 rounded-md p-2.5"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              <span className="sr-only">Zavrieť menu</span>
+              <X className="h-6 w-6" aria-hidden="true" />
+            </Button>
+          </div>
+          <div className="mt-6 flow-root">
+            <div className="-my-6 divide-y divide-border">
+              <div className="space-y-2 py-6">
+                {navigation.map((item) => (
+                  item.external ? (
+                    <a
+                      key={item.name}
+                      href={item.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="-mx-3 block rounded-lg px-3 py-2 text-base font-medium leading-7 text-foreground hover:bg-secondary"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      {item.name}
                     </a>
-                  </Button>
-                </div>
+                  ) : (
+                    <Link
+                      key={item.name}
+                      to={item.href}
+                      className="-mx-3 block rounded-lg px-3 py-2 text-base font-medium leading-7 text-foreground hover:bg-secondary"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      {item.name}
+                    </Link>
+                  )
+                ))}
+              </div>
+              <div className="py-6">
+                <Button asChild className="w-full bg-accent hover:bg-accent/90 text-accent-foreground">
+                  <a href="https://services.bookio.com/n1-pro-aesthetic/widget?lang=sk" target="_blank" rel="noopener noreferrer">
+                    Rezervovať termín
+                  </a>
+                </Button>
               </div>
             </div>
           </div>
         </div>
-      )}
+      </div>
     </header>
   );
 };
