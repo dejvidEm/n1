@@ -21,7 +21,7 @@ export const Header = () => {
         <nav className="container mx-auto flex items-center justify-between py-4 px-6" aria-label="Global">
           <div className="flex lg:flex-1">
             <Link to="/" className="-m-1.5 p-1.5">
-              <img src={logo} alt="N1 Pro Aesthetic Clinic" className="h-12 w-auto" />
+              <img src={logo} alt="N1 Pro Aesthetic Clinic" className="h-14 w-auto" />
             </Link>
           </div>
           
@@ -80,7 +80,7 @@ export const Header = () => {
           <div className="fixed inset-y-0 right-0 w-full max-w-sm bg-background shadow-xl">
             <div className="flex items-center justify-between px-6 py-4 border-b border-border">
               <Link to="/" onClick={() => setMobileMenuOpen(false)}>
-                <img src={logo} alt="N1 Pro Aesthetic Clinic" className="h-10 w-auto" />
+                <img src={logo} alt="N1 Pro Aesthetic Clinic" className="h-12 w-auto" />
               </Link>
               <button
                 type="button"

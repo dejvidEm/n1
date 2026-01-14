@@ -1,12 +1,79 @@
+import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Phone } from "lucide-react";
 import heroImage from "@/assets/hero-clinic.jpg";
 
+import { fetchHomepageContent, type HomepageContent } from "../../homepage/content";
+
 export const HeroSection = () => {
+  const [offsetY, setOffsetY] = useState(0);
+
+  const [content, setContent] = useState<HomepageContent | null>(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    let ticking = false;
+
+    const fetchContent = async () => {
+      try {
+        console.log("Starting to fetch homepage content...");
+        const content = await fetchHomepageContent();
+        console.log("Fetched homepage content:", content);
+        
+        if (content && content.headline) {
+          setContent(content);
+        } else {
+          console.warn("No content or headline found, using fallback");
+          setContent({
+            headline: "Krása, ktorá sa dotýka duše",
+            subheadline: undefined,
+            phone: undefined,
+          });
+        }
+      } catch (error) {
+        console.error("Error fetching homepage content:", error);
+        // Set a fallback content if fetch fails
+        setContent({
+          headline: "Krása, ktorá sa dotýka duše",
+          subheadline: undefined,
+          phone: undefined,
+        });
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchContent();
+
+    const handleScroll = () => {
+      const scrollY = window.scrollY || window.pageYOffset;
+
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          // Adjust multiplier to change parallax strength
+          setOffsetY(scrollY * 0.3);
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
       {/* Background with dark overlay like iemspa.sk */}
-      <div className="absolute inset-0">
+      <div
+        className="absolute inset-0 will-change-transform"
+        style={{
+          transform: `translateY(${offsetY * 0.5}px)`,
+        }}
+      >
         <img 
           src={heroImage} 
           alt="N1 Pro Aesthetic Clinic - luxusný interiér"
@@ -31,13 +98,13 @@ export const HeroSection = () => {
           </p>
           
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-display font-medium tracking-tight leading-[1.1] text-white">
-            Krása, ktorá sa<br />dotýka duše
+            {content?.headline || "Krása, ktorá sa dotýka duše"}
           </h1>
           
           <div className="w-20 h-px bg-[hsl(var(--soft-gold))]/80 mx-auto"></div>
           
           <p className="text-lg md:text-xl text-white/80 max-w-2xl mx-auto leading-relaxed">
-            Prepájame modernú estetickú medicínu so špičkovými technológiami a wellness rituálmi, ktoré obnovujú nielen vzhľad, ale aj rovnováhu tela a pokoj mysle.
+          {content?.subheadline || "Prepájame modernú estetickú medicínu so špičkovými technológiami a wellness rituálmi, ktoré obnovujú nielen vzhľad, ale aj rovnováhu tela a pokoj mysle."}
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center pt-6">
@@ -65,15 +132,17 @@ export const HeroSection = () => {
           </div>
           
           {/* Contact Info */}
-          <div className="pt-8">
-            <a 
-              href="tel:+421918500282" 
-              className="inline-flex items-center text-sm uppercase tracking-[0.2em] text-white/70 hover:text-[hsl(var(--soft-gold))] transition-colors"
-            >
-              <Phone className="h-4 w-4 mr-3" />
-              Infolinka: 0918 500 282
-            </a>
-          </div>
+          {content?.phone && (
+            <div className="pt-8">
+              <a 
+                href={`tel:${content.phone.replace(/\s/g, '')}`}
+                className="inline-flex items-center text-sm uppercase tracking-[0.2em] text-white/70 hover:text-[hsl(var(--soft-gold))] transition-colors"
+              >
+                <Phone className="h-4 w-4 mr-3" />
+                Infolinka: {content.phone}
+              </a>
+            </div>
+          )}
         </div>
       </div>
       

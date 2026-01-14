@@ -49,9 +49,9 @@ export const FinalCTA = () => {
               asChild
               className="text-sm uppercase tracking-[0.15em] px-10 py-6 border-border hover:bg-background"
             >
-              <a href="tel:+421918500282">
+              <a href="tel:+421918862508">
                 <Phone className="mr-3 h-4 w-4" />
-                0918 500 282
+                0918 862 508
               </a>
             </Button>
           </div>

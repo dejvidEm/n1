@@ -1,6 +1,8 @@
 // Line-art style icons inspired by iemspa.sk
 import { SVGProps } from "react";
 
+
+
 interface IconProps extends SVGProps<SVGSVGElement> {
   className?: string;
 }

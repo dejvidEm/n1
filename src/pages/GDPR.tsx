@@ -63,8 +63,8 @@ const GDPR = () => {
               Pre otázky týkajúce sa ochrany vašich osobných údajov nás kontaktujte na:
             </p>
             <p>
-              Email: <a href="mailto:info@n1pro.sk" className="text-accent hover:underline">info@n1pro.sk</a><br />
-              Telefón: <a href="tel:+421000000000" className="text-accent hover:underline">+421 000 000 000</a>
+              Email: <a href="mailto:n1proaesthetic@gmail.com" className="text-accent hover:underline">n1proaesthetic@gmail.com</a><br />
+              Telefón: <a href="tel:+421918862508" className="text-accent hover:underline">0918 862 508</a>
             </p>
 
             <p className="text-sm italic mt-8">

@@ -190,11 +190,11 @@ const Admin = () => {
                     </div>
                     <div className="space-y-2">
                       <Label htmlFor="phone">Telefón</Label>
-                      <Input id="phone" placeholder="+421 000 000 000" />
+                      <Input id="phone" placeholder="0918 862 508" />
                     </div>
                     <div className="space-y-2">
                       <Label htmlFor="email">Email</Label>
-                      <Input id="email" type="email" placeholder="info@n1pro.sk" />
+                      <Input id="email" type="email" placeholder="n1proaesthetic@gmail.com" />
                     </div>
                     <div className="space-y-2">
                       <Label htmlFor="address">Adresa</Label>
