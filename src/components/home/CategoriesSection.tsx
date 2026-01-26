@@ -17,7 +17,77 @@ export const CategoriesSection = () => {
 
     fetchServiceCategories()
       .then((data) => {
-        if (!cancelled) setCategories(data);
+        if (!cancelled) {
+          console.log("Homepage - Sanity data received:", data);
+          
+          // Use Sanity data if available, otherwise use hardcoded fallback
+          if (data && data.length > 0) {
+            console.log("Using Sanity categories:", data.length);
+            setCategories(data);
+          } else {
+            console.log("No Sanity data, using hardcoded fallback");
+            // Hardcoded fallback
+            const hardcodedCategories: ServiceCategory[] = [
+              {
+                _id: "hardcoded-cat-1",
+                title: "Estetická medicína",
+                subtitle: "Anti-aging",
+                slug: "esteticka-medicina",
+                icon: "aestheticMedicine",
+              },
+              {
+                _id: "hardcoded-cat-2",
+                title: "Kozmetológia",
+                subtitle: "Péče o pleť",
+                slug: "kozmetologia",
+                icon: "cosmetology",
+              },
+              {
+                _id: "hardcoded-cat-3",
+                title: "Laserové ošetrenia",
+                subtitle: "Moderné technológie",
+                slug: "laserove-osetrenia",
+                icon: "laser",
+              },
+              {
+                _id: "hardcoded-cat-4",
+                title: "Permanentný make-up",
+                subtitle: "Trvalé líčenie",
+                slug: "permanentny-makeup",
+                icon: "permanentMakeup",
+              },
+              {
+                _id: "hardcoded-cat-5",
+                title: "Telesné ošetrenia",
+                subtitle: "Wellness & relax",
+                slug: "telesne-osetrenia",
+                icon: "bodyTreatment",
+              },
+              {
+                _id: "hardcoded-cat-6",
+                title: "Starostlivosť o vlasy",
+                subtitle: "Profesionálna péče",
+                slug: "starostlivost-o-vlasy",
+                icon: "hairCare",
+              },
+              {
+                _id: "hardcoded-cat-7",
+                title: "Pedicúra",
+                subtitle: "Péče o nohy",
+                slug: "pedicura",
+                icon: "pedicure",
+              },
+              {
+                _id: "hardcoded-cat-8",
+                title: "Wellness",
+                subtitle: "Relax & regenerácia",
+                slug: "wellness",
+                icon: "wellness",
+              },
+            ];
+            setCategories(hardcodedCategories);
+          }
+        }
       })
       .catch((err) => console.error("Failed to load service categories:", err))
       .finally(() => {
