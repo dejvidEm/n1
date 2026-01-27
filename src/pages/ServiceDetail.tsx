@@ -133,6 +133,12 @@ const ServiceDetail = () => {
                 </div>
               )}
 
+              {service.introDescription && (
+                <div className="prose prose-lg max-w-none">
+                  <p className="text-muted-foreground leading-relaxed">{service.introDescription}</p>
+                </div>
+              )}
+
               {service.benefits?.length ? (
                 <div>
                   <h3 className="text-lg font-display font-medium uppercase tracking-wide mb-6">Výhody ošetrenia</h3>

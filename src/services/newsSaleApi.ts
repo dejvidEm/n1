@@ -31,3 +31,4 @@ export async function fetchNewsSaleItems(): Promise<NewsSaleItem[]> {
   }
 }
 
+

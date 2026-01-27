@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import { useParams, Link } from "react-router-dom";
 import { Layout } from "@/components/layout/Layout";
-import { ArrowLeft, Check } from "lucide-react";
+import { ArrowLeft, Check, AlertTriangle } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { urlFor } from "@/lib/sanityImage";
@@ -710,6 +710,18 @@ const ServiceCategory = () => {
 
                 {/* Info on right */}
                 <div className="order-1 md:order-2 space-y-6">
+                  {/* Detail Description */}
+                  {selectedSubcategoryData.detailDescription && (
+                    <div>
+                      <h3 className="text-xl font-display font-medium mb-4 uppercase tracking-wide">
+                        Popis
+                      </h3>
+                      <p className="text-muted-foreground leading-relaxed">
+                        {selectedSubcategoryData.detailDescription}
+                      </p>
+                    </div>
+                  )}
+
                   {/* Features with check marks */}
                   {(selectedSubcategoryData.features && selectedSubcategoryData.features.length > 0) || defaultFeatures.length > 0 ? (
                     <div>
@@ -729,6 +741,26 @@ const ServiceCategory = () => {
                       </ul>
                     </div>
                   ) : null}
+
+                  {/* Contraindications */}
+                  {selectedSubcategoryData.contraindications && selectedSubcategoryData.contraindications.length > 0 && (
+                    <div>
+                      <div className="flex items-center gap-2 mb-4">
+                        <AlertTriangle className="h-5 w-5 text-amber-500" />
+                        <h3 className="text-xl font-display font-medium uppercase tracking-wide">
+                          Kontraindikácie
+                        </h3>
+                      </div>
+                      <ul className="space-y-2">
+                        {selectedSubcategoryData.contraindications.map((contraindication, index) => (
+                          <li key={index} className="flex items-start gap-3">
+                            <span className="text-amber-500 mt-0.5 flex-shrink-0">•</span>
+                            <span className="text-muted-foreground">{contraindication}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
 
                   {/* Tags/Badges */}
                   {(selectedSubcategoryData.tags && selectedSubcategoryData.tags.length > 0) || defaultTags.length > 0 ? (

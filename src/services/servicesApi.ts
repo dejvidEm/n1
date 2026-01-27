@@ -46,6 +46,7 @@ export type ServiceSubcategoryBlock = {
   title: string;
   slug: string;
   description?: string;
+  detailDescription?: string;
   image?: {
     asset: {
       _ref: string;
@@ -55,6 +56,7 @@ export type ServiceSubcategoryBlock = {
   };
   features?: string[];
   tags?: string[];
+  contraindications?: string[];
   services: ServiceListItem[];
 };
 
@@ -101,12 +103,14 @@ export async function fetchCategoryPage(categorySlug: string): Promise<ServiceCa
         title,
         "slug": slug.current,
         description,
+        detailDescription,
         image {
           asset,
           alt
         },
         features,
         tags,
+        contraindications,
         "services": []
       }
     }`;
@@ -129,6 +133,7 @@ export type ServiceDetailData = {
   description?: string;
 
   fullDescription?: string;
+  introDescription?: string;
   benefits?: string[];
   procedure?: string;
 
