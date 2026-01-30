@@ -5,6 +5,7 @@ import { ArrowLeft, Check, AlertTriangle } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { urlFor } from "@/lib/sanityImage";
+import { PortableText } from "@portabletext/react";
 
 import { fetchCategoryPage, type ServiceCategoryPage } from "@/services/servicesApi";
 import { categoryIconMap, type CategoryIconKey } from "@/components/icons/categoryIconMap";
@@ -711,14 +712,14 @@ const ServiceCategory = () => {
                 {/* Info on right */}
                 <div className="order-1 md:order-2 space-y-6">
                   {/* Detail Description */}
-                  {selectedSubcategoryData.detailDescription && (
+                  {selectedSubcategoryData.detailDescription && selectedSubcategoryData.detailDescription.length > 0 && (
                     <div>
                       <h3 className="text-xl font-display font-medium mb-4 uppercase tracking-wide">
-                        Popis
+                        Bližšie informácie
                       </h3>
-                      <p className="text-muted-foreground leading-relaxed">
-                        {selectedSubcategoryData.detailDescription}
-                      </p>
+                      <div className="text-muted-foreground leading-relaxed prose prose-sm max-w-none">
+                        <PortableText value={selectedSubcategoryData.detailDescription} />
+                      </div>
                     </div>
                   )}
 

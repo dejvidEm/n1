@@ -1,4 +1,5 @@
 import { sanity } from "@/lib/sanityClient";
+import type { PortableTextBlock } from "@portabletext/types";
 
 export type ServiceCategoryCard = {
   _id: string;
@@ -46,7 +47,7 @@ export type ServiceSubcategoryBlock = {
   title: string;
   slug: string;
   description?: string;
-  detailDescription?: string;
+  detailDescription?: PortableTextBlock[];
   image?: {
     asset: {
       _ref: string;
