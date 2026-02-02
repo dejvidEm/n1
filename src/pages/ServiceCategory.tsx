@@ -587,28 +587,25 @@ const ServiceCategory = () => {
                     </div>
                   ) : null}
 
-                  {/* Tags/Badges */}
-                  {(category.tags && category.tags.length > 0) || defaultTags.length > 0 ? (
+                  {/* Contraindications */}
+                  {category.contraindications && category.contraindications.length > 0 && (
                     <div>
-                      <h3 className="text-xl font-display font-medium mb-4 uppercase tracking-wide">
-                        Kategórie
-                      </h3>
-                      <div className="flex flex-wrap gap-2">
-                        {(category.tags && category.tags.length > 0
-                          ? category.tags
-                          : defaultTags
-                        ).map((tag, index) => (
-                          <Badge
-                            key={index}
-                            variant="secondary"
-                            className="text-sm px-3 py-1"
-                          >
-                            {tag}
-                          </Badge>
-                        ))}
+                      <div className="flex items-center gap-2 mb-4">
+                        <AlertTriangle className="h-5 w-5 text-amber-500" />
+                        <h3 className="text-xl font-display font-medium uppercase tracking-wide">
+                          Kontraindikácie
+                        </h3>
                       </div>
+                      <ul className="space-y-2">
+                        {category.contraindications.map((contraindication, index) => (
+                          <li key={index} className="flex items-start gap-3">
+                            <span className="text-amber-500 mt-0.5 flex-shrink-0">•</span>
+                            <span className="text-muted-foreground">{contraindication}</span>
+                          </li>
+                        ))}
+                      </ul>
                     </div>
-                  ) : null}
+                  )}
                 </div>
               </div>
             </div>
@@ -727,7 +724,7 @@ const ServiceCategory = () => {
                   {(selectedSubcategoryData.features && selectedSubcategoryData.features.length > 0) || defaultFeatures.length > 0 ? (
                     <div>
                       <h3 className="text-xl font-display font-medium mb-4 uppercase tracking-wide">
-                        Výhody ošetrenia
+                        {selectedSubcategoryData.isCourse ? "Výhody kurzu" : "Výhody ošetrenia"}
                       </h3>
                       <ul className="space-y-3">
                         {(selectedSubcategoryData.features && selectedSubcategoryData.features.length > 0

@@ -8,6 +8,7 @@ const navigation = [
   { name: "Domov", href: "/", external: false },
   { name: "O nás", href: "/o-nas", external: false },
   { name: "Služby", href: "/sluzby", external: false },
+  { name: "Blog", href: "/blog", external: false },
   { name: "Rezervácia", href: "https://services.bookio.com/n1-pro-aesthetic/widget?lang=sk", external: true },
   { name: "Kontakt", href: "/kontakt", external: false },
 ];
@@ -18,10 +19,10 @@ export const Header = () => {
   return (
     <>
       <header className="sticky top-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
-        <nav className="container mx-auto flex items-center justify-between py-4 px-6" aria-label="Global">
+        <nav className="container mx-auto flex items-center justify-between py-1 px-6" aria-label="Global">
           <div className="flex lg:flex-1">
-            <Link to="/" className="-m-1.5 p-1.5">
-              <img src={logo} alt="N1 Pro Aesthetic Clinic" className="h-14 w-auto" />
+            <Link to="/" className="-m-1.5">
+              <img src={logo} alt="N1 Pro Aesthetic Clinic" className="h-28 w-auto" />
             </Link>
           </div>
           

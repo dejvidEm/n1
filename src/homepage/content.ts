@@ -4,6 +4,14 @@ export type HomepageContent = {
   headline: string;
   subheadline?: string;
   phone?: string;
+  heroImages?: Array<{
+    asset: {
+      _ref: string;
+      _type: "reference";
+    };
+    alt?: string;
+  }>;
+  heroAutoplayDelay?: number;
 };
 
 export async function fetchHomepageContent(): Promise<HomepageContent | null> {
@@ -17,7 +25,12 @@ export async function fetchHomepageContent(): Promise<HomepageContent | null> {
     const query = `*[_type == "homepage" && !(_id in path("drafts.**"))][0]{
       headline,
       subheadline,
-      phone
+      phone,
+      heroImages[] {
+        asset,
+        alt
+      },
+      heroAutoplayDelay
     }`;
     
     console.log("Fetching homepage content with query:", query);
@@ -30,7 +43,12 @@ export async function fetchHomepageContent(): Promise<HomepageContent | null> {
       const fallbackQuery = `*[_type == "homepage"][0]{
         headline,
         subheadline,
-        phone
+        phone,
+        heroImages[] {
+          asset,
+          alt
+        },
+        heroAutoplayDelay
       }`;
       const fallbackResult = await sanity.fetch(fallbackQuery);
       console.log("Fallback query result:", fallbackResult);

@@ -9,7 +9,7 @@ export const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Brand */}
           <div className="space-y-4">
-            <img src={logo} alt="N1 Pro Aesthetic Clinic" className="h-16 w-auto" />
+            <img src={logo} alt="N1 Pro Aesthetic Clinic" className="h-28 w-auto" />
             <p className="text-sm text-muted-foreground">
               Estetická a wellness klinika
             </p>
@@ -25,6 +25,7 @@ export const Footer = () => {
               <li><Link to="/" className="text-muted-foreground hover:text-accent transition-colors">Domov</Link></li>
               <li><Link to="/o-nas" className="text-muted-foreground hover:text-accent transition-colors">O nás</Link></li>
               <li><Link to="/sluzby" className="text-muted-foreground hover:text-accent transition-colors">Služby</Link></li>
+              <li><Link to="/blog" className="text-muted-foreground hover:text-accent transition-colors">Blog</Link></li>
               <li><a href="https://services.bookio.com/n1-pro-aesthetic/widget?lang=sk" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-accent transition-colors">Rezervácia</a></li>
               <li><Link to="/kontakt" className="text-muted-foreground hover:text-accent transition-colors">Kontakt</Link></li>
             </ul>

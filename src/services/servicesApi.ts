@@ -58,6 +58,7 @@ export type ServiceSubcategoryBlock = {
   features?: string[];
   tags?: string[];
   contraindications?: string[];
+  isCourse?: boolean;
   services: ServiceListItem[];
 };
 
@@ -76,7 +77,7 @@ export type ServiceCategoryPage = {
     alt?: string;
   };
   features?: string[];
-  tags?: string[];
+  contraindications?: string[];
   subcategories: ServiceSubcategoryBlock[];
 };
 
@@ -94,7 +95,7 @@ export async function fetchCategoryPage(categorySlug: string): Promise<ServiceCa
         alt
       },
       features,
-      tags,
+      contraindications,
       "subcategories": *[
         _type == "serviceSubcategory" &&
         isActive == true &&
@@ -112,6 +113,7 @@ export async function fetchCategoryPage(categorySlug: string): Promise<ServiceCa
         features,
         tags,
         contraindications,
+        isCourse,
         "services": []
       }
     }`;
@@ -161,4 +163,85 @@ export async function fetchServiceDetail(
   // Services have been removed from Sanity
   console.warn("Service detail fetch attempted but services are not available in Sanity");
   return null;
+}
+
+// Blog types and functions
+export type BlogPostListItem = {
+  _id: string;
+  title: string;
+  subtitle?: string;
+  slug: string;
+  categories?: string[];
+  featuredImage?: {
+    asset: {
+      _ref: string;
+      _type: "reference";
+    };
+    alt?: string;
+  };
+  publishedAt: string;
+};
+
+export type BlogPostDetail = {
+  _id: string;
+  title: string;
+  subtitle?: string;
+  slug: string;
+  content: PortableTextBlock[];
+  categories?: string[];
+  featuredImage?: {
+    asset: {
+      _ref: string;
+      _type: "reference";
+    };
+    alt?: string;
+  };
+  publishedAt: string;
+};
+
+export async function fetchBlogPosts(): Promise<BlogPostListItem[]> {
+  try {
+    const query = `*[_type == "blogPost" && isActive == true] | order(publishedAt desc, order asc) {
+      _id,
+      title,
+      subtitle,
+      "slug": slug.current,
+      categories,
+      featuredImage {
+        asset,
+        alt
+      },
+      publishedAt
+    }`;
+    
+    const result = await sanity.fetch(query);
+    return result || [];
+  } catch (error) {
+    console.error("Error fetching blog posts from Sanity:", error);
+    return [];
+  }
+}
+
+export async function fetchBlogPost(slug: string): Promise<BlogPostDetail | null> {
+  try {
+    const query = `*[_type == "blogPost" && slug.current == $slug && isActive == true][0]{
+      _id,
+      title,
+      subtitle,
+      "slug": slug.current,
+      content,
+      categories,
+      featuredImage {
+        asset,
+        alt
+      },
+      publishedAt
+    }`;
+    
+    const result = await sanity.fetch(query, { slug });
+    return result || null;
+  } catch (error) {
+    console.error("Error fetching blog post from Sanity:", error);
+    return null;
+  }
 }

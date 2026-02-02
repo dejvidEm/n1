@@ -2,14 +2,21 @@ import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Phone } from "lucide-react";
 import heroImage from "@/assets/hero-clinic.jpg";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+} from "@/components/ui/carousel";
+import { urlFor } from "@/lib/sanityImage";
 
 import { fetchHomepageContent, type HomepageContent } from "../../homepage/content";
 
 export const HeroSection = () => {
   const [offsetY, setOffsetY] = useState(0);
-
   const [content, setContent] = useState<HomepageContent | null>(null);
   const [loading, setLoading] = useState(true);
+  const [api, setApi] = useState<any>(null);
+  const [current, setCurrent] = useState(0);
 
   useEffect(() => {
     let ticking = false;
@@ -65,22 +72,152 @@ export const HeroSection = () => {
     };
   }, []);
 
+  // Auto-play carousel
+  useEffect(() => {
+    if (!api || !content?.heroImages || content.heroImages.length <= 1) {
+      return;
+    }
+
+    const autoplayDelay = (content.heroAutoplayDelay || 5) * 1000;
+    let autoplayInterval: NodeJS.Timeout;
+
+    const startAutoplay = () => {
+      autoplayInterval = setInterval(() => {
+        if (api.canScrollNext()) {
+          api.scrollNext();
+        } else {
+          api.scrollTo(0); // Loop back to start
+        }
+      }, autoplayDelay);
+    };
+
+    startAutoplay();
+
+    // Pause on hover
+    const carouselElement = api.containerNode();
+    if (carouselElement) {
+      const pauseAutoplay = () => clearInterval(autoplayInterval);
+      const resumeAutoplay = () => {
+        clearInterval(autoplayInterval);
+        startAutoplay();
+      };
+
+      carouselElement.addEventListener("mouseenter", pauseAutoplay);
+      carouselElement.addEventListener("mouseleave", resumeAutoplay);
+
+      return () => {
+        clearInterval(autoplayInterval);
+        carouselElement.removeEventListener("mouseenter", pauseAutoplay);
+        carouselElement.removeEventListener("mouseleave", resumeAutoplay);
+      };
+    }
+
+    return () => {
+      clearInterval(autoplayInterval);
+    };
+  }, [api, content?.heroImages, content?.heroAutoplayDelay]);
+
+  // Track current slide
+  useEffect(() => {
+    if (!api) {
+      return;
+    }
+
+    const onSelect = () => {
+      setCurrent(api.selectedScrollSnap());
+    };
+
+    api.on("select", onSelect);
+    onSelect();
+
+    return () => {
+      api.off("select", onSelect);
+    };
+  }, [api]);
+
+  // Get images array - use Sanity images or fallback
+  const heroImages = content?.heroImages && content.heroImages.length > 0
+    ? content.heroImages
+    : [{ asset: null, alt: "N1 Pro Aesthetic Clinic" }]; // Fallback to single image
+
+  const getImageUrl = (image: any) => {
+    if (image?.asset) {
+      // Use max dimensions to maintain aspect ratio while ensuring high quality
+      return urlFor(image).width(1920).height(1080).fit('max').quality(90).url();
+    }
+    return heroImage; // Fallback
+  };
+
   return (
     <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
-      {/* Background with dark overlay like iemspa.sk */}
+      {/* Background slider with dark overlay */}
       <div
         className="absolute inset-0 will-change-transform"
         style={{
           transform: `translateY(${offsetY * 0.5}px)`,
         }}
       >
-        <img 
-          src={heroImage} 
-          alt="N1 Pro Aesthetic Clinic - luxusný interiér"
-          className="w-full h-full object-cover"
-        />
+        {heroImages.length > 1 ? (
+          <Carousel
+            setApi={setApi}
+            opts={{
+              align: "start",
+              loop: true,
+              duration: 30,
+            }}
+            className="absolute inset-0 w-full h-full"
+          >
+            <CarouselContent className="h-full">
+              {heroImages.map((image, index) => (
+                <CarouselItem key={index} className="h-full basis-full p-0">
+                  <div className="relative w-full h-full min-h-[90vh]">
+                    <img
+                      src={getImageUrl(image)}
+                      alt={image.alt || `N1 Pro Aesthetic Clinic - Hero ${index + 1}`}
+                      className="absolute inset-0 w-full h-full"
+                      style={{
+                        objectFit: 'cover',
+                        width: '100%',
+                        height: '100%',
+                      }}
+                    />
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+          </Carousel>
+        ) : (
+          <img
+            src={getImageUrl(heroImages[0])}
+            alt={heroImages[0]?.alt || "N1 Pro Aesthetic Clinic - luxusný interiér"}
+            className="absolute inset-0 w-full h-full object-cover"
+            style={{
+              objectFit: 'cover',
+              width: '100%',
+              height: '100%',
+            }}
+          />
+        )}
         {/* Dark overlay for luxury feel */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70"></div>
+        
+        {/* Slide indicators */}
+        {heroImages.length > 1 && (
+          <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex gap-2">
+            {heroImages.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => api?.scrollTo(index)}
+                className={`h-2 rounded-full transition-all ${
+                  index === current
+                    ? "w-8 bg-[hsl(var(--soft-gold))]"
+                    : "w-2 bg-white/40 hover:bg-white/60"
+                }`}
+                aria-label={`Go to slide ${index + 1}`}
+              />
+            ))}
+          </div>
+        )}
       </div>
       
       <div className="container relative z-10 mx-auto px-6 text-center">
